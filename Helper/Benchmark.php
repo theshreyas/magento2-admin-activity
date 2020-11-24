@@ -1,23 +1,22 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customise this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Helper;
+namespace Catgento\AdminActivity\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 
 /**
  * Class Benchmark
- * @package KiwiCommerce\AdminActivity\Helper
+ * @package Catgento\AdminActivity\Helper
  */
 class Benchmark extends AbstractHelper
 {
@@ -28,7 +27,7 @@ class Benchmark extends AbstractHelper
     const BENCHMARK_ENABLE = 1;
 
     /**
-     * @var \KiwiCommerce\AdminActivity\Logger\Logger
+     * @var \Catgento\AdminActivity\Logger\Logger
      */
     public $logger;
 
@@ -45,11 +44,11 @@ class Benchmark extends AbstractHelper
     /**
      * Benchmark constructor.
      * @param \Magento\Framework\App\Helper\Context $context
-     * @param \KiwiCommerce\AdminActivity\Logger\Logger $logger
+     * @param \Catgento\AdminActivity\Logger\Logger $logger
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
-        \KiwiCommerce\AdminActivity\Logger\Logger $logger
+        \Catgento\AdminActivity\Logger\Logger $logger
     ) {
         $this->logger = $logger;
         parent::__construct($context);

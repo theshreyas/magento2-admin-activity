@@ -1,17 +1,16 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Setup;
+namespace Catgento\AdminActivity\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -19,7 +18,7 @@ use Magento\Framework\Setup\SchemaSetupInterface;
 
 /**
  * Class InstallSchema
- * @package KiwiCommerce\AdminActivity\Setup
+ * @package Catgento\AdminActivity\Setup
  */
 class InstallSchema implements InstallSchemaInterface
 {
@@ -35,10 +34,10 @@ class InstallSchema implements InstallSchemaInterface
         $installer->startSetup();
 
         /**
-         * Create table 'kiwicommerce_activity'
+         * Create table 'catgento_activity'
          */
         $table = $installer->getConnection()->newTable(
-            $installer->getTable('kiwicommerce_activity')
+            $installer->getTable('catgento_activity')
         )->addColumn(
             'entity_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
@@ -141,10 +140,10 @@ class InstallSchema implements InstallSchemaInterface
         $installer->getConnection()->createTable($table);
 
         /**
-         * Create table 'kiwicommerce_activity_log'
+         * Create table 'catgento_activity_log'
          */
         $table = $installer->getConnection()->newTable(
-            $installer->getTable('kiwicommerce_activity_log')
+            $installer->getTable('catgento_activity_log')
         )->addColumn(
             'entity_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
@@ -176,17 +175,17 @@ class InstallSchema implements InstallSchemaInterface
             ['nullable' => false, 'default' => ''],
             'New value of field'
         )->addIndex(
-            $installer->getIdxName('kiwicommerce_activity', ['entity_id']),
+            $installer->getIdxName('catgento_activity', ['entity_id']),
             ['activity_id']
         )->addForeignKey(
             $installer->getFkName(
-                'kiwicommerce_activity_log',
+                'catgento_activity_log',
                 'activity_id',
-                'kiwicommerce_activity',
+                'catgento_activity',
                 'entity_id'
             ),
             'activity_id',
-            $installer->getTable('kiwicommerce_activity'),
+            $installer->getTable('catgento_activity'),
             'entity_id',
             \Magento\Framework\DB\Ddl\Table::ACTION_CASCADE
         )->setComment(
@@ -195,10 +194,10 @@ class InstallSchema implements InstallSchemaInterface
         $installer->getConnection()->createTable($table);
 
         /**
-         * Create table 'kiwicommerce_activity_detail'
+         * Create table 'catgento_activity_detail'
          */
         $table = $installer->getConnection()->newTable(
-            $installer->getTable('kiwicommerce_activity_detail')
+            $installer->getTable('catgento_activity_detail')
         )->addColumn(
             'entity_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
@@ -236,17 +235,17 @@ class InstallSchema implements InstallSchemaInterface
             ['nullable' => false, 'default' => ''],
             'Error message faced during revert process'
         )->addIndex(
-            $installer->getIdxName('kiwicommerce_activity', ['entity_id']),
+            $installer->getIdxName('catgento_activity', ['entity_id']),
             ['activity_id']
         )->addForeignKey(
             $installer->getFkName(
-                'kiwicommerce_activity_detail',
+                'catgento_activity_detail',
                 'activity_id',
-                'kiwicommerce_activity',
+                'catgento_activity',
                 'entity_id'
             ),
             'activity_id',
-            $installer->getTable('kiwicommerce_activity'),
+            $installer->getTable('catgento_activity'),
             'entity_id',
             \Magento\Framework\DB\Ddl\Table::ACTION_CASCADE
         )->setComment(

@@ -1,28 +1,27 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Ui\Component\Listing\Column;
+namespace Catgento\AdminActivity\Ui\Component\Listing\Column;
 
 use Magento\Ui\Component\Listing\Columns\Column;
 
 /**
  * Class BrowserColumn
- * @package KiwiCommerce\AdminActivity\Ui\Component\Listing\Column
+ * @package Catgento\AdminActivity\Ui\Component\Listing\Column
  */
 class BrowserColumn extends Column
 {
     /**
-     * @var \KiwiCommerce\AdminActivity\Helper\Browser
+     * @var \Catgento\AdminActivity\Helper\Browser
      */
     public $browser;
 
@@ -30,14 +29,14 @@ class BrowserColumn extends Column
      * BrowserColumn constructor.
      * @param \Magento\Framework\View\Element\UiComponent\ContextInterface $context
      * @param \Magento\Framework\View\Element\UiComponentFactory $uiComponentFactory
-     * @param \KiwiCommerce\AdminActivity\Helper\Browser $browser
+     * @param \Catgento\AdminActivity\Helper\Browser $browser
      * @param array $components
      * @param array $data
      */
     public function __construct(
         \Magento\Framework\View\Element\UiComponent\ContextInterface $context,
         \Magento\Framework\View\Element\UiComponentFactory $uiComponentFactory,
-        \KiwiCommerce\AdminActivity\Helper\Browser $browser,
+        \Catgento\AdminActivity\Helper\Browser $browser,
         array $components,
         array $data
     ) {

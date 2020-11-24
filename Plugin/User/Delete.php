@@ -1,35 +1,34 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Plugin\User;
+namespace Catgento\AdminActivity\Plugin\User;
 
 /**
  * Class Delete
- * @package KiwiCommerce\AdminActivity\Plugin\User
+ * @package Catgento\AdminActivity\Plugin\User
  */
 class Delete
 {
     /**
-     * @var \KiwiCommerce\AdminActivity\Helper\Benchmark
+     * @var \Catgento\AdminActivity\Helper\Benchmark
      */
     public $benchmark;
 
     /**
      * Delete constructor.
-     * @param \KiwiCommerce\AdminActivity\Helper\Benchmark $benchmark
+     * @param \Catgento\AdminActivity\Helper\Benchmark $benchmark
      */
     public function __construct(
-        \KiwiCommerce\AdminActivity\Helper\Benchmark $benchmark
+        \Catgento\AdminActivity\Helper\Benchmark $benchmark
     ) {
         $this->benchmark = $benchmark;
     }

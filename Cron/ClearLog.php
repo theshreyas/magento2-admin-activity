@@ -1,25 +1,24 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Cron;
+namespace Catgento\AdminActivity\Cron;
 
 use Psr\Log\LoggerInterface;
-use KiwiCommerce\AdminActivity\Helper\Data as Helper;
-use KiwiCommerce\AdminActivity\Api\ActivityRepositoryInterface;
+use Catgento\AdminActivity\Helper\Data as Helper;
+use Catgento\AdminActivity\Api\ActivityRepositoryInterface;
 
 /**
  * Class ClearLog
- * @package KiwiCommerce\AdminActivity\Cron
+ * @package Catgento\AdminActivity\Cron
  */
 class ClearLog
 {
@@ -40,7 +39,7 @@ class ClearLog
     public $dateTime;
 
     /**
-     * @var \KiwiCommerce\AdminActivity\Helper\Data
+     * @var \Catgento\AdminActivity\Helper\Data
      */
     public $helper;
 
@@ -50,7 +49,7 @@ class ClearLog
     public $activityRepository;
 
     /**
-     * @var \KiwiCommerce\AdminActivity\Api\LoginRepositoryInterface
+     * @var \Catgento\AdminActivity\Api\LoginRepositoryInterface
      */
     public $loginRepository;
 
@@ -60,14 +59,14 @@ class ClearLog
      * @param \Magento\Framework\Stdlib\DateTime\DateTime $dateTime
      * @param Helper $helper
      * @param ActivityRepositoryInterface $activityRepository
-     * @param \KiwiCommerce\AdminActivity\Api\LoginRepositoryInterface $loginRepository
+     * @param \Catgento\AdminActivity\Api\LoginRepositoryInterface $loginRepository
      */
     public function __construct(
         LoggerInterface $logger,
         \Magento\Framework\Stdlib\DateTime\DateTime $dateTime,
         Helper $helper,
         ActivityRepositoryInterface $activityRepository,
-        \KiwiCommerce\AdminActivity\Api\LoginRepositoryInterface $loginRepository
+        \Catgento\AdminActivity\Api\LoginRepositoryInterface $loginRepository
     ) {
         $this->logger = $logger;
         $this->dateTime = $dateTime;

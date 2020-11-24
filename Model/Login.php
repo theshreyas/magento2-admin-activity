@@ -1,23 +1,22 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Model;
+namespace Catgento\AdminActivity\Model;
 
 use \Magento\Framework\Model\AbstractModel;
 
 /**
  * Class Login
- * @package KiwiCommerce\Activity\Model
+ * @package Catgento\Activity\Model
  */
 class Login extends AbstractModel
 {
@@ -32,6 +31,6 @@ class Login extends AbstractModel
      */
     public function _construct()
     {
-        $this->_init('KiwiCommerce\AdminActivity\Model\ResourceModel\Login');
+        $this->_init('Catgento\AdminActivity\Model\ResourceModel\Login');
     }
 }

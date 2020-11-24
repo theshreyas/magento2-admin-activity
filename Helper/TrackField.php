@@ -1,21 +1,20 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Helper;
+namespace Catgento\AdminActivity\Helper;
 
 /**
  * Class Data
- * @package KiwiCommerce\AdminActivity\Helper
+ * @package Catgento\AdminActivity\Helper
  */
 class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 {
@@ -35,25 +34,25 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
     const PRODUCT_METHOD = 'getProductFieldData';
 
     /**
-     * @var \KiwiCommerce\AdminActivity\Model\Activity\SystemConfig
+     * @var \Catgento\AdminActivity\Model\Activity\SystemConfig
      */
     public $systemConfig;
 
     /**
-     * @var \KiwiCommerce\AdminActivity\Model\Activity\ThemeConfig
+     * @var \Catgento\AdminActivity\Model\Activity\ThemeConfig
      */
     public $themeConfig;
 
     /**
      * TrackField constructor.
      * @param \Magento\Framework\App\Helper\Context $context
-     * @param \KiwiCommerce\AdminActivity\Model\Activity\SystemConfig $systemConfig
-     * @param \KiwiCommerce\AdminActivity\Model\Activity\ThemeConfig $themeConfig
+     * @param \Catgento\AdminActivity\Model\Activity\SystemConfig $systemConfig
+     * @param \Catgento\AdminActivity\Model\Activity\ThemeConfig $themeConfig
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
-        \KiwiCommerce\AdminActivity\Model\Activity\SystemConfig $systemConfig,
-        \KiwiCommerce\AdminActivity\Model\Activity\ThemeConfig $themeConfig
+        \Catgento\AdminActivity\Model\Activity\SystemConfig $systemConfig,
+        \Catgento\AdminActivity\Model\Activity\ThemeConfig $themeConfig
     ) {
         parent::__construct($context);
         $this->systemConfig = $systemConfig;
@@ -589,7 +588,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
         $fieldArray = $this->getFields($method);
         $skipFieldArray = $this->getSkipEditFieldData();
 
-        if (\KiwiCommerce\AdminActivity\Helper\Data::isWildCardModel($model)) {
+        if (\Catgento\AdminActivity\Helper\Data::isWildCardModel($model)) {
             if ($method==self::SYSTEM_METHOD) {
                 return $this->systemConfig->getEditData($model, $fieldArray);
             } elseif ($method==self::THEME_METHOD) {

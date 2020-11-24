@@ -1,23 +1,22 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Model;
+namespace Catgento\AdminActivity\Model;
 
 /**
  * Class LoginRepository
- * @package KiwiCommerce\AdminActivity\Model
+ * @package Catgento\AdminActivity\Model
  */
-class LoginRepository implements \KiwiCommerce\AdminActivity\Api\LoginRepositoryInterface
+class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInterface
 {
     /**
      * @var boolean
@@ -56,9 +55,9 @@ class LoginRepository implements \KiwiCommerce\AdminActivity\Api\LoginRepository
      * @param Processor $processor
      */
     public function __construct(
-        \KiwiCommerce\AdminActivity\Model\LoginFactory $loginFactory,
-        \KiwiCommerce\AdminActivity\Model\ResourceModel\Login\CollectionFactory $collectionFactory,
-        \KiwiCommerce\AdminActivity\Model\Processor $processor
+        \Catgento\AdminActivity\Model\LoginFactory $loginFactory,
+        \Catgento\AdminActivity\Model\ResourceModel\Login\CollectionFactory $collectionFactory,
+        \Catgento\AdminActivity\Model\Processor $processor
     ) {
         $this->loginFactory = $loginFactory;
         $this->collectionFactory = $collectionFactory;

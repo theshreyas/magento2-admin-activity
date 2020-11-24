@@ -1,27 +1,26 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Setup;
+namespace Catgento\AdminActivity\Setup;
 
 use Magento\Framework\Setup\UninstallInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\App\Config\Storage\Writer;
-use KiwiCommerce\AdminActivity\Helper\Data as ActivityHelper;
+use Catgento\AdminActivity\Helper\Data as ActivityHelper;
 
 /**
  * Class Uninstall
- * @package KiwiCommerce\AdminActivity\Setup
+ * @package Catgento\AdminActivity\Setup
  */
 class Uninstall implements UninstallInterface
 {
@@ -50,10 +49,10 @@ class Uninstall implements UninstallInterface
         $setup->startSetup();
         $connection = $setup->getConnection();
 
-        $connection->dropTable($connection->getTableName('kiwicommerce_activity_log'));
-        $connection->dropTable($connection->getTableName('kiwicommerce_activity_detail'));
-        $connection->dropTable($connection->getTableName('kiwicommerce_login_activity'));
-        $connection->dropTable($connection->getTableName('kiwicommerce_activity'));
+        $connection->dropTable($connection->getTableName('catgento_activity_log'));
+        $connection->dropTable($connection->getTableName('catgento_activity_detail'));
+        $connection->dropTable($connection->getTableName('catgento_login_activity'));
+        $connection->dropTable($connection->getTableName('catgento_activity'));
         $setup->endSetup();
 
         $scope = $this->scope;

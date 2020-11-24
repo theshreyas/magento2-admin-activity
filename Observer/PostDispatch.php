@@ -1,29 +1,28 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Observer;
+namespace Catgento\AdminActivity\Observer;
 
 use Magento\Framework\Event\ObserverInterface;
-use \KiwiCommerce\AdminActivity\Helper\Data as Helper;
+use \Catgento\AdminActivity\Helper\Data as Helper;
 
 /**
  * Class PostDispatch
- * @package KiwiCommerce\AdminActivity\Observer
+ * @package Catgento\AdminActivity\Observer
  */
 class PostDispatch implements ObserverInterface
 {
     /**
-     * @var \KiwiCommerce\AdminActivity\Model\Processor
+     * @var \Catgento\AdminActivity\Model\Processor
      */
     private $processor;
 
@@ -33,20 +32,20 @@ class PostDispatch implements ObserverInterface
     public $helper;
 
     /**
-     * @var \KiwiCommerce\AdminActivity\Helper\Benchmark
+     * @var \Catgento\AdminActivity\Helper\Benchmark
      */
     public $benchmark;
 
     /**
      * PostDispatch constructor.
-     * @param \KiwiCommerce\AdminActivity\Model\Processor $processor
+     * @param \Catgento\AdminActivity\Model\Processor $processor
      * @param Helper $helper
-     * @param \KiwiCommerce\AdminActivity\Helper\Benchmark $benchmark
+     * @param \Catgento\AdminActivity\Helper\Benchmark $benchmark
      */
     public function __construct(
-        \KiwiCommerce\AdminActivity\Model\Processor $processor,
+        \Catgento\AdminActivity\Model\Processor $processor,
         Helper $helper,
-        \KiwiCommerce\AdminActivity\Helper\Benchmark $benchmark
+        \Catgento\AdminActivity\Helper\Benchmark $benchmark
     ) {
         $this->processor = $processor;
         $this->helper = $helper;

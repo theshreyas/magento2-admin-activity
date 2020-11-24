@@ -1,25 +1,24 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Model;
+namespace Catgento\AdminActivity\Model;
 
-use \KiwiCommerce\AdminActivity\Helper\TrackField as Helper;
+use \Catgento\AdminActivity\Helper\TrackField as Helper;
 use \Magento\Framework\App\Request\Http;
 use \Magento\Framework\UrlInterface;
 
 /**
  * Class Handler
- * @package KiwiCommerce\AdminActivity\Model
+ * @package Catgento\AdminActivity\Model
  */
 class Handler
 {
@@ -61,7 +60,7 @@ class Handler
         \Magento\Framework\HTTP\Header $header,
         Http $request,
         UrlInterface $urlInterface,
-        \KiwiCommerce\AdminActivity\Model\ActivityLogFactory $activityLogFactory
+        \Catgento\AdminActivity\Model\ActivityLogFactory $activityLogFactory
     ) {
         $this->helper = $helper;
         $this->header = $header;

@@ -1,21 +1,20 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Test\Unit\Model;
+namespace Catgento\AdminActivity\Test\Unit\Model;
 
 /**
  * Class ProcessorTest
- * @package KiwiCommerce\AdminActivity\Test\Unit\Model
+ * @package Catgento\AdminActivity\Test\Unit\Model
  */
 class ProcessorTest extends \PHPUnit\Framework\TestCase
 {
@@ -41,7 +40,7 @@ class ProcessorTest extends \PHPUnit\Framework\TestCase
      */
     public function setUp()
     {
-        $this->configMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Model\Config::class)
+        $this->configMock = $this->getMockBuilder(\Catgento\AdminActivity\Model\Config::class)
             ->setMethods(['getEventByAction','getTrackFieldModel','getEventModel','getActivityModuleConstant'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -50,7 +49,7 @@ class ProcessorTest extends \PHPUnit\Framework\TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->handlerMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Model\Handler::class)
+        $this->handlerMock = $this->getMockBuilder(\Catgento\AdminActivity\Model\Handler::class)
             ->setMethods(['request'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -75,11 +74,11 @@ class ProcessorTest extends \PHPUnit\Framework\TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->activityFactoryMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Model\ActivityFactory::class)
+        $this->activityFactoryMock = $this->getMockBuilder(\Catgento\AdminActivity\Model\ActivityFactory::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->activityLogDetailFactoryMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Model\ActivityLogDetailFactory::class)
+        $this->activityLogDetailFactoryMock = $this->getMockBuilder(\Catgento\AdminActivity\Model\ActivityLogDetailFactory::class)
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -91,11 +90,11 @@ class ProcessorTest extends \PHPUnit\Framework\TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->activityRepositoryInterfaceMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Api\ActivityRepositoryInterface::class)
+        $this->activityRepositoryInterfaceMock = $this->getMockBuilder(\Catgento\AdminActivity\Api\ActivityRepositoryInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->dataMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Helper\Data::class)
+        $this->dataMock = $this->getMockBuilder(\Catgento\AdminActivity\Helper\Data::class)
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -117,14 +116,14 @@ class ProcessorTest extends \PHPUnit\Framework\TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->statusMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Model\Activity\Status::class)
+        $this->statusMock = $this->getMockBuilder(\Catgento\AdminActivity\Model\Activity\Status::class)
             ->disableOriginalConstructor()
             ->getMock();
 
         $objectManager = new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($this);
 
         $this->processorTest = $objectManager->getObject(
-            \KiwiCommerce\AdminActivity\Model\Processor::class,
+            \Catgento\AdminActivity\Model\Processor::class,
             [
                 'config' => $this->configMock,
                 'authSession' => $this->sessionMock,

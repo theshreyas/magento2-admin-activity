@@ -1,17 +1,16 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Setup;
+namespace Catgento\AdminActivity\Setup;
 
 use Magento\Framework\Setup\UpgradeSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -19,7 +18,7 @@ use Magento\Framework\Setup\SchemaSetupInterface;
 
 /**
  * Class UpgradeSchema
- * @package KiwiCommerce\AdminActivity\Setup
+ * @package Catgento\AdminActivity\Setup
  */
 class UpgradeSchema implements UpgradeSchemaInterface
 {
@@ -34,7 +33,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         $setup->startSetup();
 
         if (version_compare($context->getVersion(), '0.0.2') < 0) {
-            $tableName = $setup->getTable('kiwicommerce_activity');
+            $tableName = $setup->getTable('catgento_activity');
 
             //TODO: Check if the table already exists
             if ($setup->getConnection()->isTableExists($tableName) == true) {
@@ -56,7 +55,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         }
 
         if (version_compare($context->getVersion(), '0.1.2') < 0) {
-            $tableName = $setup->getTable('kiwicommerce_activity');
+            $tableName = $setup->getTable('catgento_activity');
 
             //TODO: Check if the table already exists
             if ($setup->getConnection()->isTableExists($tableName) == true) {
@@ -80,10 +79,10 @@ class UpgradeSchema implements UpgradeSchemaInterface
         if (version_compare($context->getVersion(), '0.1.3') < 0) {
 
             /**
-             * Create table 'kiwicommerce_login_activity'
+             * Create table 'catgento_login_activity'
              */
             $table = $setup->getConnection()->newTable(
-                $setup->getTable('kiwicommerce_login_activity')
+                $setup->getTable('catgento_login_activity')
             )->addColumn(
                 'entity_id',
                 \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
@@ -151,7 +150,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         }
 
         if (version_compare($context->getVersion(), '0.1.4') < 0) {
-            $tableName = $setup->getTable('kiwicommerce_login_activity');
+            $tableName = $setup->getTable('catgento_login_activity');
             $connection = $setup->getConnection();
 
             //TODO: Check if the table already exists
@@ -170,7 +169,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         }
 
         if (version_compare($context->getVersion(), '0.1.5') < 0) {
-            $tableName = $setup->getTable('kiwicommerce_activity_log');
+            $tableName = $setup->getTable('catgento_activity_log');
 
             //TODO: Check if the table already exists
             if ($setup->getConnection()->isTableExists($tableName) == true) {
@@ -184,7 +183,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         }
 
         if (version_compare($context->getVersion(), '0.1.6') < 0) {
-            $tableName = $setup->getTable('kiwicommerce_activity');
+            $tableName = $setup->getTable('catgento_activity');
             $connection = $setup->getConnection();
 
             //TODO: Check if the table already exists

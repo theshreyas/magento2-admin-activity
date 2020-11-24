@@ -1,21 +1,20 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Test\Unit\Plugin\App;
+namespace Catgento\AdminActivity\Test\Unit\Plugin\App;
 
 /**
  * Class ActionTest
- * @package KiwiCommerce\AdminActivity\Test\Unit\Plugin\App
+ * @package Catgento\AdminActivity\Test\Unit\Plugin\App
  */
 class ActionTest extends \PHPUnit\Framework\TestCase
 {
@@ -31,7 +30,7 @@ class ActionTest extends \PHPUnit\Framework\TestCase
      */
     public function setUp()
     {
-        $this->processorMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Model\Processor::class)
+        $this->processorMock = $this->getMockBuilder(\Catgento\AdminActivity\Model\Processor::class)
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -50,7 +49,7 @@ class ActionTest extends \PHPUnit\Framework\TestCase
         $objectManager = new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($this);
 
         $this->actionTest = $objectManager->getObject(
-            \KiwiCommerce\AdminActivity\Plugin\App\Action::class,
+            \Catgento\AdminActivity\Plugin\App\Action::class,
             [
                 'processor' => $this->processorMock
             ]

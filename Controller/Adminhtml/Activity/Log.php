@@ -1,24 +1,23 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Controller\Adminhtml\Activity;
+namespace Catgento\AdminActivity\Controller\Adminhtml\Activity;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\App\Action;
 
 /**
  * Class Log
- * @package KiwiCommerce\AdminActivity\Controller\Adminhtml\Activity
+ * @package Catgento\AdminActivity\Controller\Adminhtml\Activity
  */
 class Log extends Action
 {
@@ -57,7 +56,7 @@ class Log extends Action
     {
         $content = $this->layoutFactory->create()
             ->createBlock(
-                \KiwiCommerce\AdminActivity\Block\Adminhtml\ActivityLogListing::class
+                \Catgento\AdminActivity\Block\Adminhtml\ActivityLogListing::class
             );
 
         /** @var \Magento\Framework\Controller\Result\Raw $resultRaw */

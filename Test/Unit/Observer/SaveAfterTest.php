@@ -1,17 +1,16 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Test\Unit\Observer;
+namespace Catgento\AdminActivity\Test\Unit\Observer;
 
 class SaveAfterTest extends \PHPUnit\Framework\TestCase
 {
@@ -36,11 +35,11 @@ class SaveAfterTest extends \PHPUnit\Framework\TestCase
      */
     public function setUp()
     {
-        $this->processorMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Model\Processor::class)
+        $this->processorMock = $this->getMockBuilder(\Catgento\AdminActivity\Model\Processor::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->helperMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Helper\Data::class)
+        $this->helperMock = $this->getMockBuilder(\Catgento\AdminActivity\Helper\Data::class)
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -61,7 +60,7 @@ class SaveAfterTest extends \PHPUnit\Framework\TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->configMock = $this->getMockBuilder(\KiwiCommerce\AdminActivity\Model\Config::class)
+        $this->configMock = $this->getMockBuilder(\Catgento\AdminActivity\Model\Config::class)
             ->setMethods(['getEventByAction','getTrackFieldModel','getEventModel','getActivityModuleConstant'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -69,7 +68,7 @@ class SaveAfterTest extends \PHPUnit\Framework\TestCase
         $objectManager = new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($this);
 
         $this->saveAfter = $objectManager->getObject(
-            \KiwiCommerce\AdminActivity\Observer\SaveAfter::class,
+            \Catgento\AdminActivity\Observer\SaveAfter::class,
             [
                 'processor' => $this->processorMock,
                 'helper' => $this->helperMock,

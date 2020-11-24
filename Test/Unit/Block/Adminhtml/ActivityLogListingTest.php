@@ -1,21 +1,20 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Test\Unit\Block\Adminhtml;
+namespace Catgento\AdminActivity\Test\Unit\Block\Adminhtml;
 
 /**
  * Class ActivityLogListingTest
- * @package KiwiCommerce\AdminActivity\Test\Unit\Block\Adminhtml
+ * @package Catgento\AdminActivity\Test\Unit\Block\Adminhtml
  */
 class ActivityLogListingTest extends \PHPUnit\Framework\TestCase
 {
@@ -50,13 +49,13 @@ class ActivityLogListingTest extends \PHPUnit\Framework\TestCase
         $objectManager = new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($this);
 
         $this->activityRepositoryMock = $this->getMockForAbstractClass(
-            \KiwiCommerce\AdminActivity\Api\ActivityRepositoryInterface::class,
+            \Catgento\AdminActivity\Api\ActivityRepositoryInterface::class,
             [],
             '',
             false
         );
 
-        $this->browserMock = $this->createMock(\KiwiCommerce\AdminActivity\Helper\Browser::class);
+        $this->browserMock = $this->createMock(\Catgento\AdminActivity\Helper\Browser::class);
 
         $this->request = $this->getMockForAbstractClass(
             \Magento\Framework\App\RequestInterface::class,
@@ -73,7 +72,7 @@ class ActivityLogListingTest extends \PHPUnit\Framework\TestCase
         );
 
         $this->activityModel = $this
-            ->getMockBuilder(\KiwiCommerce\AdminActivity\Model\Activity::class)
+            ->getMockBuilder(\Catgento\AdminActivity\Model\Activity::class)
             ->setMethods(
                 [
                     'getUserAgent',
@@ -88,7 +87,7 @@ class ActivityLogListingTest extends \PHPUnit\Framework\TestCase
             ->getMock();
 
         $this->activityLogListing = $objectManager->getObject(
-            \KiwiCommerce\AdminActivity\Block\Adminhtml\ActivityLogListing::class,
+            \Catgento\AdminActivity\Block\Adminhtml\ActivityLogListing::class,
             [
                 'activityRepository' => $this->activityRepositoryMock,
                 'browser' => $this->browserMock,

@@ -13,6 +13,11 @@
             "email": "hello@kiwicommerce.co.uk",
             "homepage": "https://kiwicommerce.co.uk/",
             "role": "Leader"
+        },
+        {
+            "name": "catgento",
+            "homepage": "https://www.catgento.com",
+            "role": "Forker"
         }
     ],
     "require": {
@@ -32,7 +37,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "KiwiCommerce\\AdminActivity\\": ""
+            "Catgento\\AdminActivity\\": ""
         }
     }
 }

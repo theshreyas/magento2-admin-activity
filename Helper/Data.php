@@ -1,23 +1,22 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Helper;
+namespace Catgento\AdminActivity\Helper;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 
 /**
  * Class Data
- * @package KiwiCommerce\AdminActivity\Helper
+ * @package Catgento\AdminActivity\Helper
  */
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
@@ -112,7 +111,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     const MODULE_SEO = 'admin_activity/module/seo';
 
     /**
-     * @var \KiwiCommerce\AdminActivity\Model\Config
+     * @var \Catgento\AdminActivity\Model\Config
      */
     public $config;
 
@@ -126,11 +125,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     /**
      * Data constructor.
      * @param \Magento\Framework\App\Helper\Context $context
-     * @param \KiwiCommerce\AdminActivity\Model\Config $config
+     * @param \Catgento\AdminActivity\Model\Config $config
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
-        \KiwiCommerce\AdminActivity\Model\Config $config
+        \Catgento\AdminActivity\Model\Config $config
     ) {
         $this->config = $config;
         parent::__construct($context);

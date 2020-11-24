@@ -1,23 +1,22 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Plugin;
+namespace Catgento\AdminActivity\Plugin;
 
-use \KiwiCommerce\AdminActivity\Helper\Data as Helper;
+use \Catgento\AdminActivity\Helper\Data as Helper;
 
 /**
  * Class Auth
- * @package KiwiCommerce\AdminActivity\Plugin
+ * @package Catgento\AdminActivity\Plugin
  */
 class Auth
 {
@@ -27,25 +26,25 @@ class Auth
     public $helper;
 
     /**
-     * @var \KiwiCommerce\AdminActivity\Api\LoginRepositoryInterface
+     * @var \Catgento\AdminActivity\Api\LoginRepositoryInterface
      */
     public $loginRepository;
 
     /**
-     * @var \KiwiCommerce\AdminActivity\Helper\Benchmark
+     * @var \Catgento\AdminActivity\Helper\Benchmark
      */
     public $benchmark;
 
     /**
      * Auth constructor.
      * @param Helper $helper
-     * @param \KiwiCommerce\AdminActivity\Api\LoginRepositoryInterface $loginRepository
-     * @param \KiwiCommerce\AdminActivity\Helper\Benchmark $benchmark
+     * @param \Catgento\AdminActivity\Api\LoginRepositoryInterface $loginRepository
+     * @param \Catgento\AdminActivity\Helper\Benchmark $benchmark
      */
     public function __construct(
         Helper $helper,
-        \KiwiCommerce\AdminActivity\Api\LoginRepositoryInterface $loginRepository,
-        \KiwiCommerce\AdminActivity\Helper\Benchmark $benchmark
+        \Catgento\AdminActivity\Api\LoginRepositoryInterface $loginRepository,
+        \Catgento\AdminActivity\Helper\Benchmark $benchmark
     ) {
         $this->helper = $helper;
         $this->loginRepository = $loginRepository;

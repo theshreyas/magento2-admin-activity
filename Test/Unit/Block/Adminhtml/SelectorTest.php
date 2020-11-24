@@ -1,21 +1,20 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Test\Unit\Block\Adminhtml;
+namespace Catgento\AdminActivity\Test\Unit\Block\Adminhtml;
 
 /**
  * Class SelectorTest
- * @package KiwiCommerce\AdminActivity\Test\Unit\Block\Adminhtml
+ * @package Catgento\AdminActivity\Test\Unit\Block\Adminhtml
  */
 class SelectorTest extends \PHPUnit\Framework\TestCase
 {
@@ -34,7 +33,7 @@ class SelectorTest extends \PHPUnit\Framework\TestCase
         $this->urlBuiler = $this->createMock(\Magento\Framework\UrlInterface::class);
 
         $this->selector = $objectManager->getObject(
-            \KiwiCommerce\AdminActivity\Block\Adminhtml\Selector::class,
+            \Catgento\AdminActivity\Block\Adminhtml\Selector::class,
             [
                 '_urlBuilder' => $this->urlBuiler,
             ]

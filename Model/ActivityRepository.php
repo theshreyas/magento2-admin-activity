@@ -1,25 +1,24 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Model;
+namespace Catgento\AdminActivity\Model;
 
-use KiwiCommerce\AdminActivity\Model\Activity\SystemConfig;
+use Catgento\AdminActivity\Model\Activity\SystemConfig;
 
 /**
  * Class ActivityRepository
- * @package KiwiCommerce\AdminActivity\Model
+ * @package Catgento\AdminActivity\Model
  */
-class ActivityRepository implements \KiwiCommerce\AdminActivity\Api\ActivityRepositoryInterface
+class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityRepositoryInterface
 {
     /**
      * @var string
@@ -84,13 +83,13 @@ class ActivityRepository implements \KiwiCommerce\AdminActivity\Api\ActivityRepo
      * @param \Magento\Framework\ObjectManagerInterface $objectManager
      */
     public function __construct(
-        \KiwiCommerce\AdminActivity\Model\ActivityFactory $activityFactory,
-        \KiwiCommerce\AdminActivity\Model\ResourceModel\Activity\CollectionFactory $collectionFactory,
-        \KiwiCommerce\AdminActivity\Model\ActivityLogDetailFactory $activityLogDetailFactory,
-        \KiwiCommerce\AdminActivity\Model\ActivityLogFactory $activityLogFactory,
-        \KiwiCommerce\AdminActivity\Model\ResourceModel\ActivityLog\CollectionFactory $LogCollectionFactory,
-        \KiwiCommerce\AdminActivity\Model\Activity\SystemConfig $systemConfig,
-        \KiwiCommerce\AdminActivity\Model\Activity\ThemeConfig $themeConfig,
+        \Catgento\AdminActivity\Model\ActivityFactory $activityFactory,
+        \Catgento\AdminActivity\Model\ResourceModel\Activity\CollectionFactory $collectionFactory,
+        \Catgento\AdminActivity\Model\ActivityLogDetailFactory $activityLogDetailFactory,
+        \Catgento\AdminActivity\Model\ActivityLogFactory $activityLogFactory,
+        \Catgento\AdminActivity\Model\ResourceModel\ActivityLog\CollectionFactory $LogCollectionFactory,
+        \Catgento\AdminActivity\Model\Activity\SystemConfig $systemConfig,
+        \Catgento\AdminActivity\Model\Activity\ThemeConfig $themeConfig,
         \Magento\Framework\ObjectManagerInterface $objectManager
     ) {
         $this->activityFactory = $activityFactory;
@@ -202,7 +201,7 @@ class ActivityRepository implements \KiwiCommerce\AdminActivity\Api\ActivityRepo
         $logData = $this->getActivityLog($activity->getId());
         $detailModel = $this->getActivityDetail($activity->getId());
 
-        if (\KiwiCommerce\AdminActivity\Helper\Data::isWildCardModel($detailModel->getModelClass())) {
+        if (\Catgento\AdminActivity\Helper\Data::isWildCardModel($detailModel->getModelClass())) {
             if ($activity->getModule()==self::THEME_MODULE) {
                 return $this->themeConfig->revertData($logData, $activity->getStoreId(), $activity->getScope());
             }
@@ -240,7 +239,7 @@ class ActivityRepository implements \KiwiCommerce\AdminActivity\Api\ActivityRepo
      */
     public function getOldData($model)
     {
-        if (\KiwiCommerce\AdminActivity\Helper\Data::isWildCardModel($model)) {
+        if (\Catgento\AdminActivity\Helper\Data::isWildCardModel($model)) {
             return $this->systemConfig->getOldData($model);
         }
         $data = $this->objectManager->get(get_class($model))->load($model->getId());

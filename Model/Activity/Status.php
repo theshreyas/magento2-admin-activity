@@ -1,23 +1,22 @@
 <?php
 /**
- * KiwiCommerce
+ * Catgento
  *
  * Do not edit or add to this file if you wish to upgrade to newer versions in the future.
  * If you wish to customize this module for your needs.
- * Please contact us https://kiwicommerce.co.uk/contacts.
  *
- * @category   KiwiCommerce
- * @package    KiwiCommerce_AdminActivity
+ * @category   Catgento
+ * @package    Catgento_AdminActivity
  * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
  * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
-namespace KiwiCommerce\AdminActivity\Model\Activity;
+namespace Catgento\AdminActivity\Model\Activity;
 
 use \Magento\Framework\Model\AbstractModel;
 
 /**
  * Class Status
- * @package KiwiCommerce\AdminActivity\Model\Activity
+ * @package Catgento\AdminActivity\Model\Activity
  */
 class Status extends AbstractModel
 {
@@ -42,16 +41,16 @@ class Status extends AbstractModel
     const ACTIVITY_FAIL = 3;
 
     /**
-     * @var \KiwiCommerce\AdminActivity\Model\ActivityFactory
+     * @var \Catgento\AdminActivity\Model\ActivityFactory
      */
     public $activityFactory;
 
     /**
      * Status constructor.
-     * @param \KiwiCommerce\AdminActivity\Model\ActivityFactory $activityFactory
+     * @param \Catgento\AdminActivity\Model\ActivityFactory $activityFactory
      */
     public function __construct(
-        \KiwiCommerce\AdminActivity\Model\ActivityFactory $activityFactory
+        \Catgento\AdminActivity\Model\ActivityFactory $activityFactory
     ) {
         $this->activityFactory = $activityFactory;
     }
