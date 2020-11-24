@@ -7,8 +7,6 @@
  *
  * @category   Catgento
  * @package    Catgento_AdminActivity
- * @copyright  Copyright (C) 2018 Kiwi Commerce Ltd (https://kiwicommerce.co.uk/)
- * @license    https://kiwicommerce.co.uk/magento2-extension-license/
  */
 namespace Catgento\AdminActivity\Setup;
 
@@ -155,7 +153,7 @@ class InstallSchema implements InstallSchemaInterface
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
             10,
             ['nullable' => true, 'unsigned' => true],
-            'Entity id of kiwicommerce_activity table'
+            'Entity id of catgento_activity table'
         )->addColumn(
             'field_name',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
@@ -209,7 +207,7 @@ class InstallSchema implements InstallSchemaInterface
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
             10,
             ['unsigned' => true, 'nullable' => false],
-            'Entity id of kiwicommerce_activity table'
+            'Entity id of catgento_activity table'
         )->addColumn(
             'model_class',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
