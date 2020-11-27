@@ -12,19 +12,9 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="catgento" translate="label" sortOrder="9999">
-            <label><![CDATA[Catgento Extensions]]></label>
-        </tab>
-        <section id="admin_activity" translate="label" sortOrder="130" showInDefault="1" showInWebsite="0" showInStore="0">
-            <class>separator-top</class>
-            <label>Admin Activity</label>
-            <tab>catgento</tab>
-            <resource>Catgento_AdminActivity::activityConfig</resource>
-            <group id="hint" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
-                <frontend_model>Catgento\AdminActivity\Block\Adminhtml\System\Config\Fieldset\Hint</frontend_model>
-            </group>
-            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
-                <label>General Configuration</label>
+        <section id="admin">
+            <group id="general_admin_activity" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Admin User Actions Log</label>
                 <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
@@ -41,63 +31,60 @@
                     <label>Clear Admin Activity Logs After</label>
                     <comment>Clear all admin activity logs after this days</comment>
                 </field>
-            </group>
-            <group id="module" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
-                <label>Allow Module</label>
-                <field id="order" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Order</label>
+                <field id="order" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Order Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="product" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Product</label>
+                <field id="product" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Product Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="category" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Category</label>
+                <field id="category" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Category Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="customer" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Customer</label>
+                <field id="customer" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Customer Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="promotion" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Promotion</label>
+                <field id="promotion" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Promotion Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="email" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Email Templates</label>
+                <field id="email" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Email Templates Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="page" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Page</label>
+                <field id="page" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Page Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="block" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Block</label>
+                <field id="block" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Block Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="widget" translate="label" type="select" sortOrder="9" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Widget</label>
+                <field id="widget" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Widget Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="theme" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Theme</label>
+                <field id="theme" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Theme Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="system_config" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>System Configuration</label>
+                <field id="system_config" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging System Configuration Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="attibute" translate="label" type="select" sortOrder="12" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Product Attributes</label>
+                <field id="attibute" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Product Attributes Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="admin_user" translate="label" type="select" sortOrder="13" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Admin user</label>
+                <field id="admin_user" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging Admin user Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="seo" translate="label" type="select" sortOrder="14" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>SEO</label>
+                <field id="seo" translate="label" type="select" sortOrder="140" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Disable Logging SEO Actions</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
