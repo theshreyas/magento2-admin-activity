@@ -21,92 +21,92 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     /**
      * @var string
      */
-    const ACTIVITY_ENABLE = 'admin/general_admin_activity/enable';
+    const ACTIVITY_ENABLE = 'admin/activity/enable';
 
     /**
      * @var string
      */
-    const LOGIN_ACTIVITY_ENABLE = 'admin/general_admin_activity/login_activity';
+    const LOGIN_ACTIVITY_ENABLE = 'admin/activity/login_activity';
 
     /**
      * @var string
      */
-    const PAGE_VISIT_ENABLE = 'admin/general_admin_activity/page_visit';
+    const PAGE_VISIT_ENABLE = 'admin/activity/page_visit';
 
     /**
      * @var string
      */
-    const CLEAR_LOG_DAYS = 'admin/general_admin_activity/clearlog';
+    const CLEAR_LOG_DAYS = 'admin/activity/clearlog';
 
     /**
      * @var string
      */
-    const MODULE_ORDER = 'admin/general_admin_activity/order';
+    const MODULE_ORDER = 'admin/activity/log/order';
 
     /**
      * @var string
      */
-    const MODULE_PRODUCT = 'admin/general_admin_activity/product';
+    const MODULE_PRODUCT = 'admin/activity/log/product';
 
     /**
      * @var string
      */
-    const MODULE_CATEGORY = 'admin/general_admin_activity/category';
+    const MODULE_CATEGORY = 'admin/activity/log/category';
 
     /**
      * @var string
      */
-    const MODULE_CUSTOMER = 'admin/general_admin_activity/customer';
+    const MODULE_CUSTOMER = 'admin/activity/log/customer';
 
     /**
      * @var string
      */
-    const MODULE_PROMOTION = 'admin/general_admin_activity/promotion';
+    const MODULE_PROMOTION = 'admin/activity/log/promotion';
 
     /**
      * @var string
      */
-    const MODULE_EMAIL = 'admin/general_admin_activity/email';
+    const MODULE_EMAIL = 'admin/activity/log/email';
 
     /**
      * @var string
      */
-    const MODULE_PAGE = 'admin/general_admin_activity/page';
+    const MODULE_PAGE = 'admin/activity/log/page';
 
     /**
      * @var string
      */
-    const MODULE_BLOCK = 'admin/general_admin_activity/block';
+    const MODULE_BLOCK = 'admin/activity/log/block';
 
     /**
      * @var string
      */
-    const MODULE_WIDGET = 'admin/general_admin_activity/widget';
+    const MODULE_WIDGET = 'admin/activity/log/widget';
 
     /**
      * @var string
      */
-    const MODULE_THEME = 'admin/general_admin_activity/theme';
+    const MODULE_THEME = 'admin/activity/log/theme';
 
     /**
      * @var string
      */
-    const MODULE_SYSTEM_CONFIG = 'admin/general_admin_activity/system_config';
+    const MODULE_SYSTEM_CONFIG = 'admin/activity/log/system_config';
 
     /**
      * @var string
      */
-    const MODULE_ATTRIBUTE = 'admin/general_admin_activity/attibute';
+    const MODULE_ATTRIBUTE = 'admin/activity/log/attibute';
 
     /**
      * @var string
      */
-    const MODULE_ADMIN_USER = 'admin/general_admin_activity/admin_user';
+    const MODULE_ADMIN_USER = 'admin/activity/log/admin_user';
 
     /**
      * @var string
      */
-    const MODULE_SEO = 'admin/general_admin_activity/seo';
+    const MODULE_SEO = 'admin/activity/log/seo';
 
     /**
      * @var \Catgento\AdminActivity\Model\Config
