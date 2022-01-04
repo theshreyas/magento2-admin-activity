@@ -40,6 +40,13 @@
                         <field id="enable">1</field>
                     </depends>
                 </field>
+                <field id="benchmark" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Log Benchmarks</label>
+                    <comment>Log how long each action takes</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
                 <group id="log" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Actions</label>
                     <depends>

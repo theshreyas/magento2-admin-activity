@@ -41,6 +41,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     /**
      * @var string
      */
+    const BENCHMARK_ENABLE = 'admin/activity/benchmark';
+
+    /**
+     * @var string
+     */
     const MODULE_ORDER = 'admin/activity/log/order';
 
     /**

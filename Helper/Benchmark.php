@@ -10,6 +10,7 @@
  */
 namespace Catgento\AdminActivity\Helper;
 
+use Catgento\AdminActivity\Helper\Data as Helper;
 use Magento\Framework\App\Helper\AbstractHelper;
 
 /**
@@ -18,12 +19,6 @@ use Magento\Framework\App\Helper\AbstractHelper;
  */
 class Benchmark extends AbstractHelper
 {
-
-    /**
-     * Get Benchmark is enable or not
-     */
-    const BENCHMARK_ENABLE = 1;
-
     /**
      * @var \Catgento\AdminActivity\Logger\Logger
      */
@@ -38,17 +33,23 @@ class Benchmark extends AbstractHelper
      * @var String[] End time of execution
      */
     public $endTime;
+    /**
+     * @var Data
+     */
+    private $helper;
 
     /**
-     * Benchmark constructor.
      * @param \Magento\Framework\App\Helper\Context $context
      * @param \Catgento\AdminActivity\Logger\Logger $logger
+     * @param Data $helper
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
-        \Catgento\AdminActivity\Logger\Logger $logger
+        \Catgento\AdminActivity\Logger\Logger $logger,
+        Helper $helper
     ) {
         $this->logger = $logger;
+        $this->helper = $helper;
         parent::__construct($context);
     }
 
@@ -60,7 +61,7 @@ class Benchmark extends AbstractHelper
     public function start($method)
     {
         $this->reset($method);
-        if (self::BENCHMARK_ENABLE) {
+        if ($this->helper->getConfigValue('BENCHMARK_ENABLE')) {
             $this->startTime[$method] = round(microtime(true) * 1000);
             $this->logger->info("Method: ". $method);
             $this->logger->info("Start time: ". $this->startTime[$method]);
@@ -75,7 +76,7 @@ class Benchmark extends AbstractHelper
      */
     public function end($method)
     {
-        if (self::BENCHMARK_ENABLE) {
+        if ($this->helper->getConfigValue('BENCHMARK_ENABLE')) {
             $this->endTime[$method] = round(microtime(true) * 1000);
             $difference = $this->endTime[$method] - $this->startTime[$method];
             if ($difference) {
