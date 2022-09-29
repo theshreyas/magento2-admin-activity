@@ -623,7 +623,7 @@ class Processor
         }
 
         if ($this->helper->isPageVisitEnable()
-            && $this->isValidAction($module, $this->lastAction)) {
+            && $this->isValidAction($module, $this->lastAction) && $this->eventConfig) {
 
             $activity = $this->_initLog();
 
