@@ -44,7 +44,7 @@ class Action
      * @param \Magento\Framework\Interception\InterceptorInterface $controller
      * @return void
      */
-    public function beforeDispatch(\Magento\Framework\Interception\InterceptorInterface $controller)
+    public function beforeDispatch(\Magento\Backend\App\AbstractAction $controller)
     {
         $this->benchmark->start(__METHOD__);
         $actionName = $controller->getRequest()->getActionName();
