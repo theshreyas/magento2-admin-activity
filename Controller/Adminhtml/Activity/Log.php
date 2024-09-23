@@ -13,10 +13,6 @@ namespace Catgento\AdminActivity\Controller\Adminhtml\Activity;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\App\Action;
 
-/**
- * Class Log
- * @package Catgento\AdminActivity\Controller\Adminhtml\Activity
- */
 class Log extends Action
 {
     /**
@@ -47,7 +43,8 @@ class Log extends Action
     }
 
     /**
-     * view action
+     * View action
+     *
      * @return $this
      */
     public function execute()

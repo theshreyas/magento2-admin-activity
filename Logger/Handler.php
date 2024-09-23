@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Logger;
 
-/**
- * Class Handler
- * @package Catgento\AdminActivity\Logger
- */
 class Handler extends \Magento\Framework\Logger\Handler\Base
 {
     /**
@@ -23,7 +19,7 @@ class Handler extends \Magento\Framework\Logger\Handler\Base
     public $loggerType = \Catgento\AdminActivity\Logger\Logger::INFO;
 
     /**
-     * File name
+     * File name variable
      * @var string
      */
     public $fileName = '/var/log/adminactivity.log';

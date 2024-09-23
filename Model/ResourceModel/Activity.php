@@ -12,10 +12,6 @@ namespace Catgento\AdminActivity\Model\ResourceModel;
 
 use \Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
-/**
- * Class Activity
- * @package Catgento\AdminActivity\Model\ResourceModel
- */
 class Activity extends AbstractDb
 {
 

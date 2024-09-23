@@ -15,10 +15,6 @@ use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Ui\Component\Listing\Columns\Column;
 use \Catgento\AdminActivity\Helper\Data as Helper;
 
-/**
- * Class ActionTypeColumn
- * @package Catgento\AdminActivity\Ui\Component\Listing\Column
- */
 class ActionTypeColumn extends Column
 {
     /**
@@ -47,6 +43,7 @@ class ActionTypeColumn extends Column
 
     /**
      * Prepare Data Source
+     *
      * @param array $dataSource
      * @return array
      */

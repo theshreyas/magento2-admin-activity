@@ -14,16 +14,12 @@ use Magento\Framework\Event\ObserverInterface;
 use \Catgento\AdminActivity\Helper\Data as Helper;
 use \Catgento\AdminActivity\Api\ActivityRepositoryInterface;
 
-/**
- * Class DeleteAfter
- * @package Catgento\AdminActivity\Observer
- */
 class DeleteAfter implements ObserverInterface
 {
     /**
      * @var string
      */
-    const SYSTEM_CONFIG = 'adminhtml_system_config_save';
+    public const SYSTEM_CONFIG = 'adminhtml_system_config_save';
 
     /**
      * @var \Catgento\AdminActivity\Model\Processor
@@ -58,6 +54,7 @@ class DeleteAfter implements ObserverInterface
 
     /**
      * Delete after
+     *
      * @param \Magento\Framework\Event\Observer $observer
      * @return \Magento\Framework\Event\Observer
      */

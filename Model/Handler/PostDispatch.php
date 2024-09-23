@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Model\Handler;
 
-/**
- * Class PostDispatch
- * @package Catgento\AdminActivity\Model\Handler
- */
 class PostDispatch
 {
     /**
@@ -68,7 +64,7 @@ class PostDispatch
     {
         $logData = [];
         $status = $this->request->getParam('status', '');
-        if($status != '') {
+        if ($status != '') {
             $logData['status'] = [
                 'old_value' => $model->getStatus(),
                 'new_value' => $status
@@ -76,7 +72,7 @@ class PostDispatch
         }
 
         $attributes = $this->request->getParam('attributes', []);
-        if(!empty($attributes)) {
+        if (!empty($attributes)) {
             foreach ($attributes as $attribute => $value) {
                 $logData[$attribute] = [
                     'old_value' => $model->getData($attribute),
@@ -86,7 +82,7 @@ class PostDispatch
         }
 
         $inventories = $this->request->getParam('inventory', []);
-        if(!empty($inventories)) {
+        if (!empty($inventories)) {
             foreach ($inventories as $field => $value) {
                 $logData[$field] = [
                     'old_value' => $model->getData($field),
@@ -121,14 +117,14 @@ class PostDispatch
      */
     public function productUpdate($config, $processor)
     {
-        $activity = $processor->_initLog();
+        $activity = $processor->initLog();
         $activity->setIsRevertable(1);
 
         $selected = $this->request->getParam('selected');
-        if(empty($selected)) {
+        if (empty($selected)) {
             $selected = $this->session->getProductIds();
         }
-        if(!empty($selected)) {
+        if (!empty($selected)) {
             foreach ($selected as $id) {
 
                 $model = $this->productRepository->getById($id);
@@ -137,8 +133,8 @@ class PostDispatch
                 $log->setItemName($model->getData($processor->config->getActivityModuleItemField($config['module'])));
                 $log->setItemUrl($processor->getEditUrl($model));
 
-                $logData = $processor->handler->__initLog($this->getProductAttributes($model));
-                $logDetail = $processor->_initActivityDetail($model);
+                $logData = $processor->handler->initLog($this->getProductAttributes($model));
+                $logDetail = $processor->initActivityDetail($model);
 
                 $processor->activityLogs[] = [
                     \Catgento\AdminActivity\Model\Activity::class => $log,

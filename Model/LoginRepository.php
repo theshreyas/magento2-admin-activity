@@ -10,21 +10,17 @@
  */
 namespace Catgento\AdminActivity\Model;
 
-/**
- * Class LoginRepository
- * @package Catgento\AdminActivity\Model
- */
 class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInterface
 {
     /**
      * @var boolean
      */
-    const LOGIN_SUCCESS = 1;
+    public const LOGIN_SUCCESS = 1;
 
     /**
      * @var boolean
      */
-    const LOGIN_FAILED = 0;
+    public const LOGIN_FAILED = 0;
 
     /**
      * @var LoginFactory
@@ -48,6 +44,7 @@ class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInte
 
     /**
      * LoginRepository constructor.
+     *
      * @param LoginFactory $loginFactory
      * @param ResourceModel\Login\CollectionFactory $collectionFactory
      * @param Processor $processor
@@ -64,6 +61,7 @@ class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInte
 
     /**
      * Get login user
+     *
      * @return string
      */
     public function getUser()
@@ -73,6 +71,7 @@ class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInte
 
     /**
      * Set login user
+     *
      * @param $user
      * @return $this
      */
@@ -84,14 +83,15 @@ class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInte
 
     /**
      * Set login activity data
+     *
      * @return mixed
      */
-    public function _initLoginActivity()
+    public function initLoginActivity()
     {
         $login = $this->loginFactory->create();
 
         $user = $this->getUser();
-        if($user != null && $user instanceof \Magento\User\Model\User) {
+        if ($user != null && $user instanceof \Magento\User\Model\User) {
             $login->setUsername($user->getUsername());
             $login->setName(ucwords($user->getName()));
         }
@@ -105,6 +105,7 @@ class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInte
 
     /**
      * Set login data
+     *
      * @param $status
      * @param $type
      * @param string $remark
@@ -112,7 +113,7 @@ class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInte
      */
     public function addLog($status, $type, $remark = '')
     {
-        $login = $this->_initLoginActivity();
+        $login = $this->initLoginActivity();
 
         $login->setStatus($status);
         $login->setType($type);
@@ -124,6 +125,7 @@ class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInte
 
     /**
      * Track login success log
+     *
      * @return void
      */
     public function addSuccessLog()
@@ -133,6 +135,7 @@ class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInte
 
     /**
      * Track login fail log
+     *
      * @param string $remark
      */
     public function addFailedLog($remark = '')
@@ -142,6 +145,7 @@ class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInte
 
     /**
      * Track logout success log
+     *
      * @return void
      */
     public function addLogoutLog()
@@ -151,6 +155,7 @@ class LoginRepository implements \Catgento\AdminActivity\Api\LoginRepositoryInte
 
     /**
      * Get all admin activity data before date
+     *
      * @param $endDate
      * @return $this
      */

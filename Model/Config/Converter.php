@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Model\Config;
 
-/**
- * Class Converter
- * @package Catgento\AdminActivity\Model\Config
- */
 class Converter implements \Magento\Framework\Config\ConverterInterface
 {
     /**

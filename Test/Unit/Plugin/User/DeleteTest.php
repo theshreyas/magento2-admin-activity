@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Test\Unit\Plugin\User;
 
-/**
- * Class DeleteTest
- * @package Catgento\AdminActivity\Test\Unit\Plugin
- */
 class DeleteTest extends \PHPUnit\Framework\TestCase
 {
     public $delete;

@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Model;
 
-/**
- * Class Config
- * @package Catgento\AdminActivity\Model
- */
 class Config
 {
     /**
@@ -30,6 +26,7 @@ class Config
 
     /**
      * Config constructor.
+     *
      * @param Config\Data $dataStorage
      */
     public function __construct(
@@ -40,6 +37,7 @@ class Config
 
     /**
      * Get all action labels translated and sorted ASC
+     *
      * @return array
      */
     public function getActions()
@@ -55,13 +53,14 @@ class Config
 
     /**
      * List of all full actions
+     *
      * @return array
      */
     public function getControllerActions()
     {
         $actions = [];
         foreach ($this->_xmlConfig as $module => $config) {
-            if(isset($config['actions'])) {
+            if (isset($config['actions'])) {
                 $actions = array_merge($actions, array_keys($config['actions']));
             }
         }
@@ -70,6 +69,7 @@ class Config
 
     /**
      * Get logging action translated label
+     *
      * @param string $action
      * @return \Magento\Framework\Phrase|string
      */
@@ -89,6 +89,7 @@ class Config
 
     /**
      * Get event by action
+     *
      * @param $action
      * @return bool
      */
@@ -105,6 +106,7 @@ class Config
 
     /**
      * Return Model class name
+     *
      * @param $module
      * @return string
      */
@@ -118,6 +120,7 @@ class Config
 
     /**
      * Return model label name
+     *
      * @param $module
      * @return bool
      */
@@ -132,6 +135,7 @@ class Config
 
     /**
      * Return model class name
+     *
      * @param $module
      * @return string
      */
@@ -146,6 +150,7 @@ class Config
 
     /**
      * Return module constant
+     *
      * @param $module
      * @return bool
      */
@@ -159,6 +164,7 @@ class Config
 
     /**
      * Return module edit url
+     *
      * @param $module
      * @return bool
      */
@@ -172,6 +178,7 @@ class Config
 
     /**
      * Return module item name
+     *
      * @param $module
      * @return bool
      */

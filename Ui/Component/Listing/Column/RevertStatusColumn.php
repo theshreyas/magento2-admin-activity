@@ -14,12 +14,13 @@ use Magento\Ui\Component\Listing\Columns\Column;
 
 /**
  * Class StatusColumn
- * @package Catgento\AdminActivity\Ui\Component\Listing\Column
+
  */
 class RevertStatusColumn extends Column
 {
     /**
      * Prepare Data Source
+     *
      * @param array $dataSource
      * @return array
      */

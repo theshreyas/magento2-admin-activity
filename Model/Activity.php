@@ -12,23 +12,20 @@ namespace Catgento\AdminActivity\Model;
 
 use \Magento\Framework\Model\AbstractModel;
 
-/**
- * Class Activity
- * @package Catgento\Activity\Model
- */
 class Activity extends AbstractModel
 {
     /**
      * @var string
      */
-    const ACTIVITY_ID = 'entity_id'; // We define the id field name
+    public const ACTIVITY_ID = 'entity_id'; // We define the id field name
 
     /**
      * Initialize resource model
+     *
      * @return void
      */
     public function _construct()
     {
-        $this->_init('Catgento\AdminActivity\Model\ResourceModel\Activity');
+        $this->_init(\Catgento\AdminActivity\Model\ResourceModel\Activity::class);
     }
 }

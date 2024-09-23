@@ -12,21 +12,18 @@ namespace Catgento\AdminActivity\Model\ResourceModel\Login;
 
 use \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
-/**
- * Class Collection
- * @package Catgento\AdminActivity\Model\ResourceModel\Login
- */
 class Collection extends AbstractCollection
 {
     /**
      * Define resource model
+     *
      * @return void
      */
     public function _construct()
     {
         $this->_init(
-            'Catgento\AdminActivity\Model\Login',
-            'Catgento\AdminActivity\Model\ResourceModel\Login'
+            \Catgento\AdminActivity\Model\Login::class,
+            \Catgento\AdminActivity\Model\ResourceModel\Login::class
         );
     }
 }

@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Model\Activity;
 
-/**
- * Class SystemConfig
- * @package Catgento\AdminActivity\Model\Activity
- */
 class SystemConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterface
 {
     /**
@@ -49,6 +45,7 @@ class SystemConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterfac
 
     /**
      * Get config path
+     *
      * @param $model
      * @return string
      */
@@ -68,6 +65,7 @@ class SystemConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterfac
 
     /**
      * Get old activity data of system config module
+     *
      * @param $model
      * @return mixed
      */
@@ -92,7 +90,9 @@ class SystemConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterfac
 
     /**
      * Get edit activity data of system config module
+     *
      * @param $model
+     * @param $fieldArray
      * @return mixed
      */
     public function getEditData($model, $fieldArray)
@@ -130,6 +130,7 @@ class SystemConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterfac
 
     /**
      * Get revert activity data of system config module
+     *
      * @param $logData
      * @param $scopeId
      * @return bool
@@ -151,6 +152,7 @@ class SystemConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterfac
 
     /**
      * Set additional data
+     *
      * @param $oldData
      * @param $newData
      * @return array

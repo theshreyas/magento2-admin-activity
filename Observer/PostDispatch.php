@@ -13,10 +13,6 @@ namespace Catgento\AdminActivity\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use \Catgento\AdminActivity\Helper\Data as Helper;
 
-/**
- * Class PostDispatch
- * @package Catgento\AdminActivity\Observer
- */
 class PostDispatch implements ObserverInterface
 {
     /**
@@ -52,6 +48,7 @@ class PostDispatch implements ObserverInterface
 
     /**
      * Post dispatch
+     *
      * @param \Magento\Framework\Event\Observer $observer
      * @return \Magento\Framework\Event\Observer
      */

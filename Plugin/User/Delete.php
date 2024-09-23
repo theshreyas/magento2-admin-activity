@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Plugin\User;
 
-/**
- * Class Delete
- * @package Catgento\AdminActivity\Plugin\User
- */
 class Delete
 {
     /**
@@ -23,6 +19,7 @@ class Delete
 
     /**
      * Delete constructor.
+     *
      * @param \Catgento\AdminActivity\Helper\Benchmark $benchmark
      */
     public function __construct(
@@ -30,7 +27,10 @@ class Delete
     ) {
         $this->benchmark = $benchmark;
     }
+
     /**
+     * Around Delete plugin
+     *
      * @param \Magento\User\Model\ResourceModel\User $user
      * @param callable $proceed
      * @param $object

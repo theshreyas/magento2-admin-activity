@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Test\Unit\Block\Adminhtml;
 
-/**
- * Class ActivityLogListingTest
- * @package Catgento\AdminActivity\Test\Unit\Block\Adminhtml
- */
 class ActivityLogListingTest extends \PHPUnit\Framework\TestCase
 {
     public $activityRepositoryMock;

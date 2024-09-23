@@ -12,24 +12,27 @@ namespace Catgento\AdminActivity\Api;
 
 /**
  * Interface ActivityRepositoryInterface
- * @package Catgento\AdminActivity\Api
+
  */
 interface ActivityRepositoryInterface
 {
     /**
      * Array of protected fields
+     *
      * @return mixed
      */
     public function protectedFields();
 
     /**
      * Get collection of admin activity
+     *
      * @return mixed
      */
     public function getList();
 
     /**
      * Get all admin activity data before date
+     *
      * @param $endDate
      * @return mixed
      */
@@ -37,6 +40,7 @@ interface ActivityRepositoryInterface
 
     /**
      * Remove activity log entry
+     *
      * @param $activityId
      * @return mixed
      */
@@ -44,6 +48,7 @@ interface ActivityRepositoryInterface
 
     /**
      * Get all admin activity detail by activity id
+     *
      * @param $activityId
      * @return mixed
      */
@@ -51,6 +56,7 @@ interface ActivityRepositoryInterface
     
     /**
      * Get all admin activity log by activity id
+     *
      * @param $activityId
      * @return mixed
      */
@@ -58,6 +64,7 @@ interface ActivityRepositoryInterface
 
     /**
      * Revert last changes made in module
+     *
      * @param $activity
      * @return mixed
      */
@@ -65,6 +72,7 @@ interface ActivityRepositoryInterface
 
     /**
      * Get old data for system config module
+     *
      * @param $model
      * @return mixed
      */
@@ -72,6 +80,7 @@ interface ActivityRepositoryInterface
 
     /**
      * Get admin activity by id
+     *
      * @param $activityId
      * @return mixed
      */
@@ -79,6 +88,7 @@ interface ActivityRepositoryInterface
 
     /**
      * Check field is protected or not
+     *
      * @param $fieldName
      * @return mixed
      */

@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Model\Activity;
 
-/**
- * Class ThemeConfig
- * @package Catgento\AdminActivity\Model\Activity
- */
 class ThemeConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterface
 {
     /**
@@ -58,6 +54,7 @@ class ThemeConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterface
 
     /**
      * Get config path of theme configuration
+     *
      * @param $model
      * @return string
      */
@@ -76,6 +73,7 @@ class ThemeConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterface
 
     /**
      * Get old activity data of theme configuration
+     *
      * @param $model
      * @return mixed
      */
@@ -95,6 +93,7 @@ class ThemeConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterface
 
     /**
      * Get edit activity data of theme configuration
+     *
      * @param $model
      * @return mixed
      */
@@ -111,6 +110,7 @@ class ThemeConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterface
 
     /**
      * Get revert activity data of theme configuration
+     *
      * @param $logData
      * @param $scopeId
      * @return bool
@@ -132,6 +132,7 @@ class ThemeConfig implements \Catgento\AdminActivity\Api\Activity\ModelInterface
 
     /**
      * Set additional data
+     *
      * @param $oldData
      * @param $newData
      * @return array

@@ -14,53 +14,27 @@ use Magento\Framework\Event\ObserverInterface;
 use \Catgento\AdminActivity\Helper\Data as Helper;
 use Catgento\AdminActivity\Api\ActivityRepositoryInterface;
 
-/**
- * Class SaveBefore
- * @package Catgento\AdminActivity\Observer
- */
 class SaveBefore implements ObserverInterface
 {
     /**
-     * @var Helper
-     */
-    public $helper;
-
-    /**
-     * @var \Catgento\AdminActivity\Model\Processor
-     */
-    public $processor;
-
-    /**
-     * @var ActivityRepositoryInterface
-     */
-    public $activityRepository;
-
-    /**
-     * @var \Catgento\AdminActivity\Helper\Benchmark
-     */
-    public $benchmark;
-
-    /**
      * SaveBefore constructor.
+     *
      * @param Helper $helper
      * @param \Catgento\AdminActivity\Model\Processor $processor
      * @param ActivityRepositoryInterface $activityRepository
-     * @param \Catgento\AdminActivity\Helper\Benchmark $banchmark
+     * @param \Catgento\AdminActivity\Helper\Benchmark $benchmark
      */
     public function __construct(
-        Helper $helper,
-        \Catgento\AdminActivity\Model\Processor $processor,
-        ActivityRepositoryInterface $activityRepository,
-        \Catgento\AdminActivity\Helper\Benchmark $benchmark
+        public Helper $helper,
+        public \Catgento\AdminActivity\Model\Processor $processor,
+        public ActivityRepositoryInterface $activityRepository,
+        public \Catgento\AdminActivity\Helper\Benchmark $benchmark
     ) {
-        $this->helper = $helper;
-        $this->processor = $processor;
-        $this->activityRepository = $activityRepository;
-        $this->benchmark = $benchmark;
     }
 
     /**
      * Save before
+     *
      * @param \Magento\Framework\Event\Observer $observer
      * @return \Magento\Framework\Event\Observer
      */

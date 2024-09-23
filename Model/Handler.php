@@ -14,10 +14,6 @@ use \Catgento\AdminActivity\Helper\TrackField as Helper;
 use \Magento\Framework\App\Request\Http;
 use \Magento\Framework\UrlInterface;
 
-/**
- * Class Handler
- * @package Catgento\AdminActivity\Model
- */
 class Handler
 {
     /**
@@ -69,10 +65,11 @@ class Handler
 
     /**
      * Set log data
+     *
      * @param $logs
      * @return mixed
      */
-    public function __initLog($logs)
+    public function initLog($logs)
     {
         if (!empty($logs)) {
             foreach ($logs as $field => $value) {
@@ -86,39 +83,42 @@ class Handler
 
     /**
      * Get add activity log data
+     *
      * @param $model
      * @param $method
      * @return mixed
      */
     public function modelAdd($model, $method)
     {
-        return $this->__initLog(
+        return $this->initLog(
             $this->helper->getAddData($model, $method)
         );
     }
 
     /**
      * Get edit activity log data
+     *
      * @param $model
      * @param $method
      * @return mixed
      */
     public function modelEdit($model, $method)
     {
-        return $this->__initLog(
+        return $this->initLog(
             $this->helper->getEditData($model, $method)
         );
     }
 
     /**
      * Get delete activity log data
+     *
      * @param $model
      * @param $method
      * @return mixed
      */
     public function modelDelete($model, $method)
     {
-        return $this->__initLog(
+        return $this->initLog(
             $this->helper->getDeleteData($model, $method)
         );
     }

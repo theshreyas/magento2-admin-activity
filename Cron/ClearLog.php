@@ -14,17 +14,13 @@ use Psr\Log\LoggerInterface;
 use Catgento\AdminActivity\Helper\Data as Helper;
 use Catgento\AdminActivity\Api\ActivityRepositoryInterface;
 
-/**
- * Class ClearLog
- * @package Catgento\AdminActivity\Cron
- */
 class ClearLog
 {
     /**
      * Default date format
      * @var string
      */
-    const DATE_FORMAT = 'Y-m-d H:i:s';
+    public const DATE_FORMAT = 'Y-m-d H:i:s';
 
     /**
      * @var LoggerInterface
@@ -75,9 +71,10 @@ class ClearLog
 
     /**
      * Return cron cleanup date
+     *
      * @return null|string
      */
-    public function __getDate()
+    public function getDate()
     {
         $timestamp = $this->dateTime->gmtTimestamp();
         $day = $this->helper->getConfigValue('CLEAR_LOG_DAYS');
@@ -90,6 +87,7 @@ class ClearLog
 
     /**
      * Delete record which date is less than the current date
+     *
      * @return $this|null
      */
     public function execute()
@@ -99,7 +97,7 @@ class ClearLog
                 return $this;
             }
 
-            if ($date = $this->__getDate()) {
+            if ($date = $this->getDate()) {
                 $activities = $this->activityRepository->getListBeforeDate($date);
                 if (!empty($activities)) {
                     foreach ($activities as $activity) {

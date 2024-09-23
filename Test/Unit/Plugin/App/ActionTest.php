@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Test\Unit\Plugin\App;
 
-/**
- * Class ActionTest
- * @package Catgento\AdminActivity\Test\Unit\Plugin\App
- */
 class ActionTest extends \PHPUnit\Framework\TestCase
 {
 

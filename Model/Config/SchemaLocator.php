@@ -13,16 +13,12 @@ namespace Catgento\AdminActivity\Model\Config;
 use Magento\Framework\Config\SchemaLocatorInterface;
 use Magento\Framework\Module\Dir;
 
-/**
- * Class SchemaLocator
- * @package Catgento\AdminActivity\Model\Config
- */
 class SchemaLocator implements SchemaLocatorInterface
 {
     /**
      * XML schema for config file.
      */
-    const CONFIG_FILE_SCHEMA = 'adminactivity.xsd';
+    public const CONFIG_FILE_SCHEMA = 'adminactivity.xsd';
 
     /**
      * Path to corresponding XSD file with validation rules for merged config

@@ -12,24 +12,24 @@ namespace Catgento\AdminActivity\Helper;
 
 /**
  * Class Data
- * @package Catgento\AdminActivity\Helper
+
  */
 class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 {
     /**
      * @var string;
      */
-    const SYSTEM_METHOD = 'getSystemConfigFieldData';
+    public const SYSTEM_METHOD = 'getSystemConfigFieldData';
 
     /**
      * @var string;
      */
-    const THEME_METHOD = 'getThemeConfigFieldData';
+    public const THEME_METHOD = 'getThemeConfigFieldData';
 
     /**
      * @var string;
      */
-    const PRODUCT_METHOD = 'getProductFieldData';
+    public const PRODUCT_METHOD = 'getProductFieldData';
 
     /**
      * @var \Catgento\AdminActivity\Model\Activity\SystemConfig
@@ -59,6 +59,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get product module fields
+     *
      * @return array
      */
     public function getProductFieldData()
@@ -88,6 +89,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get category module fields
+     *
      * @return array
      */
     public function getCategoryFieldData()
@@ -101,6 +103,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get customer module fields
+     *
      * @return array
      */
     public function getCustomerFieldData()
@@ -126,6 +129,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get customer group modules fields
+     *
      * @return array
      */
     public function getCustomerGroupFieldData()
@@ -138,6 +142,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get catalog promotion modules fields
+     *
      * @return array
      */
     public function getCatalogPromotionFieldData()
@@ -151,6 +156,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get cart promotion modules fields
+     *
      * @return array
      */
     public function getCartPromotionFieldData()
@@ -165,6 +171,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get email modules fields
+     *
      * @return array
      */
     public function getEmailFieldData()
@@ -185,6 +192,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get page modules fields
+     *
      * @return array
      */
     public function getPageFieldData()
@@ -200,6 +208,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get block modules fields
+     *
      * @return array
      */
     public function getBlockFieldData()
@@ -214,6 +223,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get widget modules fields
+     *
      * @return array
      */
     public function getWidgetFieldData()
@@ -226,6 +236,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get theme configuration field data
+     *
      * @return array
      */
     public function getThemeConfigFieldData()
@@ -241,6 +252,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get theme schedule field data
+     *
      * @return array
      */
     public function getThemeScheduleFieldData()
@@ -253,6 +265,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get system config field data
+     *
      * @return array
      */
     public function getSystemConfigFieldData()
@@ -264,6 +277,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get attribute modules fields
+     *
      * @return array
      */
     public function getAttributeFieldData()
@@ -279,6 +293,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get attribute set modules fields
+     *
      * @return array
      */
     public function getAttributeSetFieldData()
@@ -292,6 +307,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get attribute set modules fields
+     *
      * @return array
      */
     public function getReviewRatingFieldData()
@@ -304,6 +320,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get review modules fields
+     *
      * @return array
      */
     public function getReviewFieldData()
@@ -319,6 +336,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get admin user modules fields
+     *
      * @return array
      */
     public function getAdminUserFieldData()
@@ -336,6 +354,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get admin user role modules fields
+     *
      * @return array
      */
     public function getAdminUserRoleFieldData()
@@ -349,6 +368,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get order modules fields
+     *
      * @return array
      */
     public function getOrderFieldData()
@@ -365,6 +385,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get tax rule modules fields
+     *
      * @return array
      */
     public function getTaxRuleFieldData()
@@ -379,6 +400,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get tax rate modules fields
+     *
      * @return array
      */
     public function getTaxRateFieldData()
@@ -392,6 +414,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get url rewrites modules fields
+     *
      * @return array
      */
     public function getUrlRewriteFieldData()
@@ -404,6 +427,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get search term modules fields
+     *
      * @return array
      */
     public function getSearchTermFieldData()
@@ -417,6 +441,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get search synonyms modules fields
+     *
      * @return array
      */
     public function getSearchSynonymsFieldData()
@@ -426,6 +451,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get sitemap modules fields
+     *
      * @return array
      */
     public function getSitemapFieldData()
@@ -440,6 +466,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get checkout agreement modules fields
+     *
      * @return array
      */
     public function getCheckoutAgreementFieldData()
@@ -453,6 +480,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get Order satus modules fields
+     *
      * @return array
      */
     public function getOrderStatusFieldData()
@@ -465,6 +493,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get System store modules fields
+     *
      * @return array
      */
     public function getSystemStoreFieldData()
@@ -476,6 +505,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get integration modules fields
+     *
      * @return array
      */
     public function getIntegrationFieldData()
@@ -494,6 +524,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get Edit fields which will skip
+     *
      * @return array
      */
     public function getSkipEditFieldData()
@@ -537,6 +568,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get all fields by method
+     *
      * @param $method
      * @return array
      */
@@ -551,6 +583,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get added activity data
+     *
      * @param $model
      * @param $method
      * @return array
@@ -577,6 +610,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get edited activity data
+     *
      * @param $model
      * @param $method
      * @return array
@@ -619,6 +653,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get deleted activity data
+     *
      * @param $model
      * @param $method
      * @return array
@@ -645,6 +680,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get wild data
+     *
      * @param $model
      * @param $method
      * @return array
@@ -668,6 +704,7 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Skip this fields while tracking activity log
+     *
      * @param $model
      * @param $key
      * @param $value

@@ -20,31 +20,31 @@ $adminDetails = $block->getAdminDetails();
                     <td width="1%" style="font-size: 16px;font-weight: 600;">:</td>
                     <td><?php if (!empty($adminDetails['username'])) {
                             echo $adminDetails['username'];
-                            if (!empty($adminDetails['name'])) {
-                                echo " (" . ucwords(strtolower($adminDetails['name'])) . ") ";
-                            }
+                        if (!empty($adminDetails['name'])) {
+                            echo " (" . ucwords(strtolower($adminDetails['name'])) . ") ";
+                        }
                         }
                         ?></td>
                 </tr>
                 <tr style="height: 35px;text-indent: 10px;">
                     <td style="font-size: 16px;font-weight: 600;">Module</td>
                     <td width="1%" style="font-size: 16px;font-weight: 600;">:</td>
-                    <td><?php echo $adminDetails['module']; ?></td>
+                    <td><?= $adminDetails['module']; ?></td>
                 </tr>
                 <tr style="height: 35px;text-indent: 10px;">
                     <td style="font-size: 16px;font-weight: 600;">Action</td>
                     <td width="1%" style="font-size: 16px;font-weight: 600;">:</td>
-                    <td><?php echo $adminDetails['fullaction']; ?> </td>
+                    <td><?= $adminDetails['fullaction']; ?> </td>
                 </tr>
                 <tr style="height: 35px;text-indent: 10px;">
                     <td style="font-size: 16px;font-weight: 600;">User Agent</td>
                     <td width="1%" style="font-size: 16px;font-weight: 600;">:</td>
-                    <td style="text-indent: 0px;padding-left: 10px;"><?php echo $adminDetails['browser']; ?></td>
+                    <td style="text-indent: 0px;padding-left: 10px;"><?= $adminDetails['browser']; ?></td>
                 </tr>
                 <tr style="height: 35px;text-indent: 10px;">
                     <td style="font-size: 16px;font-weight: 600;">Date</td>
                     <td width="1%" style="font-size: 16px;font-weight: 600;">:</td>
-                    <td><?php echo $adminDetails['date']; ?></td>
+                    <td><?= $adminDetails['date']; ?></td>
                 </tr>
             </table>
         </td>
@@ -71,8 +71,8 @@ $adminDetails = $block->getAdminDetails();
                             <td>
                                 <span class="value-container" id="value-container-old"
                                       readonly><?php if (!$block->activityRepository->isFieldProtected($item['field_name'])) {
-                                        echo $block->escapeHtml($item['old_value']);
-                                    } ?>
+                                            echo $escaper->escapeHtml($item['old_value']);
+                                               } ?>
                                 </span>
                             </td>
                             <td class="
@@ -89,8 +89,8 @@ $adminDetails = $block->getAdminDetails();
                                 <span class="value-container"
                                       id="value-container-new"
                                       readonly><?php if (!$block->activityRepository->isFieldProtected($item['field_name'])) {
-                                        echo $block->escapeHtml($item['new_value']);
-                                    } ?>
+                                            echo $escaper->escapeHtml($item['new_value']);
+                                               } ?>
                                 </span>
                             </td>
                         </tr>

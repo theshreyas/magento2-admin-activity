@@ -12,15 +12,12 @@ namespace Catgento\AdminActivity\Model\ResourceModel;
 
 use \Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
-/**
- * Class Login
- * @package Catgento\AdminActivity\Model\ResourceModel
- */
 class Login extends AbstractDb
 {
 
     /**
      * Initialize resource model
+     *
      * @return void
      */
     public function _construct()

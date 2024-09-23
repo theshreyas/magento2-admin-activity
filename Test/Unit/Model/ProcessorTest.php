@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Test\Unit\Model;
 
-/**
- * Class ProcessorTest
- * @package Catgento\AdminActivity\Test\Unit\Model
- */
 class ProcessorTest extends \PHPUnit\Framework\TestCase
 {
     public $configMock;
@@ -159,6 +155,5 @@ class ProcessorTest extends \PHPUnit\Framework\TestCase
             ->method('getEventByAction')
             ->with('catalog_product_save')
             ->willReturn($this->eventConfig);
-
     }
 }

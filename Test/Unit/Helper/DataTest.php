@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Test\Unit\Helper;
 
-/**
- * Class DataTest
- * @package Catgento\AdminActivity\Test\Unit\Helper
- */
 class DataTest extends \PHPUnit\Framework\TestCase
 {
     /**

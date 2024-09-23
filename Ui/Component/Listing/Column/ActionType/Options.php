@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Ui\Component\Listing\Column\ActionType;
 
-/**
- * Class Options
- * @package Catgento\AdminActivity\Ui\Component\Listing\Column\ActionType
- */
 class Options implements \Magento\Framework\Option\ArrayInterface
 {
     /**
@@ -32,6 +28,7 @@ class Options implements \Magento\Framework\Option\ArrayInterface
 
     /**
      * List all option to get in filter
+     *
      * @return array
      */
     public function toOptionArray()

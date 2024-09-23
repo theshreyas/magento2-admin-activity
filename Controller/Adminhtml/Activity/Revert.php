@@ -13,10 +13,6 @@ namespace Catgento\AdminActivity\Controller\Adminhtml\Activity;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\App\Action;
 
-/**
- * Class Revert
- * @package Catgento\AdminActivity\Controller\Adminhtml\Activity
- */
 class Revert extends Action
 {
     /**
@@ -47,6 +43,7 @@ class Revert extends Action
 
     /**
      * Revert action
+     *
      * @return \Magento\Backend\Model\View\Result\Page
      */
     public function execute()

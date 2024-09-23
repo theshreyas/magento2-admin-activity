@@ -12,106 +12,102 @@ namespace Catgento\AdminActivity\Helper;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 
-/**
- * Class Data
- * @package Catgento\AdminActivity\Helper
- */
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
     /**
      * @var string
      */
-    const ACTIVITY_ENABLE = 'admin/activity/enable';
+    public const ACTIVITY_ENABLE = 'admin/activity/enable';
 
     /**
      * @var string
      */
-    const LOGIN_ACTIVITY_ENABLE = 'admin/activity/login_activity';
+    public const LOGIN_ACTIVITY_ENABLE = 'admin/activity/login_activity';
 
     /**
      * @var string
      */
-    const PAGE_VISIT_ENABLE = 'admin/activity/page_visit';
+    public const PAGE_VISIT_ENABLE = 'admin/activity/page_visit';
 
     /**
      * @var string
      */
-    const CLEAR_LOG_DAYS = 'admin/activity/clearlog';
+    public const CLEAR_LOG_DAYS = 'admin/activity/clearlog';
 
     /**
      * @var string
      */
-    const BENCHMARK_ENABLE = 'admin/activity/benchmark';
+    public const BENCHMARK_ENABLE = 'admin/activity/benchmark';
 
     /**
      * @var string
      */
-    const MODULE_ORDER = 'admin/activity/log/order';
+    public const MODULE_ORDER = 'admin/activity/log/order';
 
     /**
      * @var string
      */
-    const MODULE_PRODUCT = 'admin/activity/log/product';
+    public const MODULE_PRODUCT = 'admin/activity/log/product';
 
     /**
      * @var string
      */
-    const MODULE_CATEGORY = 'admin/activity/log/category';
+    public const MODULE_CATEGORY = 'admin/activity/log/category';
 
     /**
      * @var string
      */
-    const MODULE_CUSTOMER = 'admin/activity/log/customer';
+    public const MODULE_CUSTOMER = 'admin/activity/log/customer';
 
     /**
      * @var string
      */
-    const MODULE_PROMOTION = 'admin/activity/log/promotion';
+    public const MODULE_PROMOTION = 'admin/activity/log/promotion';
 
     /**
      * @var string
      */
-    const MODULE_EMAIL = 'admin/activity/log/email';
+    public const MODULE_EMAIL = 'admin/activity/log/email';
 
     /**
      * @var string
      */
-    const MODULE_PAGE = 'admin/activity/log/page';
+    public const MODULE_PAGE = 'admin/activity/log/page';
 
     /**
      * @var string
      */
-    const MODULE_BLOCK = 'admin/activity/log/block';
+    public const MODULE_BLOCK = 'admin/activity/log/block';
 
     /**
      * @var string
      */
-    const MODULE_WIDGET = 'admin/activity/log/widget';
+    public const MODULE_WIDGET = 'admin/activity/log/widget';
 
     /**
      * @var string
      */
-    const MODULE_THEME = 'admin/activity/log/theme';
+    public const MODULE_THEME = 'admin/activity/log/theme';
 
     /**
      * @var string
      */
-    const MODULE_SYSTEM_CONFIG = 'admin/activity/log/system_config';
+    public const MODULE_SYSTEM_CONFIG = 'admin/activity/log/system_config';
 
     /**
      * @var string
      */
-    const MODULE_ATTRIBUTE = 'admin/activity/log/attibute';
+    public const MODULE_ATTRIBUTE = 'admin/activity/log/attibute';
 
     /**
      * @var string
      */
-    const MODULE_ADMIN_USER = 'admin/activity/log/admin_user';
+    public const MODULE_ADMIN_USER = 'admin/activity/log/admin_user';
 
     /**
      * @var string
      */
-    const MODULE_SEO = 'admin/activity/log/seo';
+    public const MODULE_SEO = 'admin/activity/log/seo';
 
     /**
      * @var \Catgento\AdminActivity\Model\Config
@@ -140,6 +136,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Check and return status of module
+     *
      * @return bool
      */
     public function isEnable()
@@ -154,6 +151,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Check and return status for login activity
+     *
      * @return bool
      */
     public function isLoginEnable()
@@ -170,6 +168,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Check and return status for page visit history
+     *
      * @return bool
      */
     public function isPageVisitEnable()
@@ -186,6 +185,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get value of system config from path
+     *
      * @param $path
      * @return bool
      */
@@ -206,6 +206,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get translated label by action name
+     *
      * @param string $action
      * @return string
      */
@@ -216,6 +217,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get all actions
+     *
      * @return array
      */
     public function getAllActions()
@@ -225,6 +227,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get activity module name
+     *
      * @return bool
      */
     public function getActivityModuleName($module)
@@ -234,6 +237,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     /**
      * Get module name is valid or not
+     *
      * @param $model
      * @return bool
      */

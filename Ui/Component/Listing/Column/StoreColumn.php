@@ -10,20 +10,17 @@
  */
 namespace Catgento\AdminActivity\Ui\Component\Listing\Column;
 
-/**
- * Class StoreColumn
- * @package Catgento\AdminActivity\Ui\Component\Listing\Column
- */
 class StoreColumn extends \Magento\Store\Ui\Component\Listing\Column\Store
 {
     /**
      * Field name for store
      * @var string
      */
-    const KEY_FIELD = 'store_id';
+    public const KEY_FIELD = 'store_id';
 
     /**
      * Prepare Item
+     *
      * @param array $item
      * @return string
      */

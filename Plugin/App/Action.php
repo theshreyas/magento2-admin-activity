@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Plugin\App;
 
-/**
- * Class Action
- * @package Catgento\AdminActivity\Plugin\App
- */
 class Action
 {
     /**
@@ -41,6 +37,7 @@ class Action
 
     /**
      * Get before dispatch data
+     *
      * @param \Magento\Framework\Interception\InterceptorInterface $controller
      * @return void
      */

@@ -12,10 +12,6 @@ namespace Catgento\AdminActivity\Observer;
 
 use Magento\Framework\Event\ObserverInterface;
 
-/**
- * Class LoadAfter
- * @package Catgento\AdminActivity\Observer
- */
 class LoadAfter implements ObserverInterface
 {
     /**
@@ -51,6 +47,7 @@ class LoadAfter implements ObserverInterface
 
     /**
      * Delete after
+     *
      * @param \Magento\Framework\Event\Observer $observer
      * @return \Magento\Framework\Event\Observer
      */

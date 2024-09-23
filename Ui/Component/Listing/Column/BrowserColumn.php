@@ -12,10 +12,6 @@ namespace Catgento\AdminActivity\Ui\Component\Listing\Column;
 
 use Magento\Ui\Component\Listing\Columns\Column;
 
-/**
- * Class BrowserColumn
- * @package Catgento\AdminActivity\Ui\Component\Listing\Column
- */
 class BrowserColumn extends Column
 {
     /**
@@ -44,7 +40,8 @@ class BrowserColumn extends Column
 
     /**
      * Get user agent data
-     * @param $item
+     *
+     * @param array $item
      * @return string
      */
     public function getAgent($item)
@@ -56,6 +53,7 @@ class BrowserColumn extends Column
 
     /**
      * Prepare Data Source
+     *
      * @param array $dataSource
      * @return array
      */

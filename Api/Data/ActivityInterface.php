@@ -12,7 +12,7 @@ namespace Catgento\AdminActivity\Api\Data;
 
 /**
  * Interface ActivityInterface
- * @package Catgento\AdminActivity\Api\Data
+
  */
 interface ActivityInterface
 {

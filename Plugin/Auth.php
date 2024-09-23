@@ -12,10 +12,6 @@ namespace Catgento\AdminActivity\Plugin;
 
 use \Catgento\AdminActivity\Helper\Data as Helper;
 
-/**
- * Class Auth
- * @package Catgento\AdminActivity\Plugin
- */
 class Auth
 {
     /**
@@ -51,6 +47,7 @@ class Auth
 
     /**
      * Track admin logout activity
+     *
      * @param \Magento\Backend\Model\Auth $auth
      * @param callable $proceed
      * @return mixed

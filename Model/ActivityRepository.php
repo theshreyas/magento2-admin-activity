@@ -12,96 +12,45 @@ namespace Catgento\AdminActivity\Model;
 
 use Catgento\AdminActivity\Model\Activity\SystemConfig;
 
-/**
- * Class ActivityRepository
- * @package Catgento\AdminActivity\Model
- */
 class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityRepositoryInterface
 {
     /**
      * @var string
      */
-    const THEME_MODULE = 'Themes';
+    public const THEME_MODULE = 'Themes';
 
     /**
      * @var string
      */
-    const QTY_FIELD = 'qty';
-
-    /**
-     * @var ActivityFactory
-     */
-    public $activityFactory;
-
-    /**
-     * @var ResourceModel\Activity\CollectionFactory
-     */
-    public $collectionFactory;
-
-    /**
-     * @var ActivityLogDetailFactory
-     */
-    public $activityLogDetailFactory;
-
-    /**
-     * @var ActivityLogFactory
-     */
-    public $activityLogFactory;
-
-    /**
-     * @var ResourceModel\ActivityLog\CollectionFactory
-     */
-    public $LogCollectionFactory;
-
-    /**
-     * @var SystemConfig
-     */
-    public $systemConfig;
-
-    /**
-     * @var Activity\ThemeConfig
-     */
-    public $themeConfig;
-
-    /**
-     * Object Manager instance
-     * @var \Magento\Framework\ObjectManagerInterface
-     */
-    public $objectManager;
+    public const QTY_FIELD = 'qty';
 
     /**
      * ActivityRepository constructor.
+     *
      * @param ActivityFactory $activityFactory
      * @param ResourceModel\Activity\CollectionFactory $collectionFactory
      * @param ActivityLogDetailFactory $activityLogDetailFactory
      * @param ActivityLogFactory $activityLogFactory
-     * @param ResourceModel\ActivityLog\CollectionFactory $LogCollectionFactory
+     * @param ResourceModel\ActivityLog\CollectionFactory $logCollectionFactory
      * @param SystemConfig $systemConfig
      * @param Activity\ThemeConfig $themeConfig
      * @param \Magento\Framework\ObjectManagerInterface $objectManager
      */
     public function __construct(
-        \Catgento\AdminActivity\Model\ActivityFactory $activityFactory,
-        \Catgento\AdminActivity\Model\ResourceModel\Activity\CollectionFactory $collectionFactory,
-        \Catgento\AdminActivity\Model\ActivityLogDetailFactory $activityLogDetailFactory,
-        \Catgento\AdminActivity\Model\ActivityLogFactory $activityLogFactory,
-        \Catgento\AdminActivity\Model\ResourceModel\ActivityLog\CollectionFactory $LogCollectionFactory,
-        \Catgento\AdminActivity\Model\Activity\SystemConfig $systemConfig,
-        \Catgento\AdminActivity\Model\Activity\ThemeConfig $themeConfig,
-        \Magento\Framework\ObjectManagerInterface $objectManager
+        public \Catgento\AdminActivity\Model\ActivityFactory $activityFactory,
+        public \Catgento\AdminActivity\Model\ResourceModel\Activity\CollectionFactory $collectionFactory,
+        public \Catgento\AdminActivity\Model\ActivityLogDetailFactory $activityLogDetailFactory,
+        public \Catgento\AdminActivity\Model\ActivityLogFactory $activityLogFactory,
+        public \Catgento\AdminActivity\Model\ResourceModel\ActivityLog\CollectionFactory $logCollectionFactory,
+        public \Catgento\AdminActivity\Model\Activity\SystemConfig $systemConfig,
+        public \Catgento\AdminActivity\Model\Activity\ThemeConfig $themeConfig,
+        public \Magento\Framework\ObjectManagerInterface $objectManager
     ) {
-        $this->activityFactory = $activityFactory;
-        $this->collectionFactory = $collectionFactory;
-        $this->activityLogDetailFactory = $activityLogDetailFactory;
-        $this->activityLogFactory = $activityLogFactory;
-        $this->LogCollectionFactory = $LogCollectionFactory;
-        $this->systemConfig = $systemConfig;
-        $this->themeConfig = $themeConfig;
-        $this->objectManager = $objectManager;
     }
 
     /**
      * Array of protected fields
+     *
      * @return array
      */
     public function protectedFields()
@@ -113,6 +62,7 @@ class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityReposito
 
     /**
      * Get all admin activity data
+     *
      * @return ResourceModel\Activity\Collection
      */
     public function getList()
@@ -123,6 +73,7 @@ class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityReposito
 
     /**
      * Get all admin activity data before date
+     *
      * @param $endDate
      * @return $this
      */
@@ -136,6 +87,7 @@ class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityReposito
 
     /**
      * Remove activity log entry
+     *
      * @param $activityId
      * @return void
      */
@@ -148,6 +100,7 @@ class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityReposito
 
     /**
      * Get all admin activity detail by activity id
+     *
      * @param $activityId
      * @return $this
      */
@@ -160,18 +113,20 @@ class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityReposito
     
     /**
      * Get all admin activity log by activity id
+     *
      * @param $activityId
      * @return $this
      */
     public function getActivityLog($activityId)
     {
-        $collection = $this->LogCollectionFactory->create()
+        $collection = $this->logCollectionFactory->create()
             ->addFieldToFilter('activity_id', ["eq" => $activityId]);
         return $collection;
     }
 
     /**
      * Get method name
+     *
      * @param $field
      * @return string
      */
@@ -191,6 +146,7 @@ class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityReposito
 
     /**
      * Revert last changes made in module
+     *
      * @param $activity
      * @return bool
      */
@@ -232,6 +188,7 @@ class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityReposito
 
     /**
      * Get old data for system config module
+     *
      * @param $model
      * @return bool
      */
@@ -249,6 +206,7 @@ class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityReposito
 
     /**
      * Get admin activity by id
+     *
      * @param $activityId
      * @return $this
      */
@@ -259,6 +217,7 @@ class ActivityRepository implements \Catgento\AdminActivity\Api\ActivityReposito
 
     /**
      * Check field is protected or not
+     *
      * @param $fieldName
      * @return bool
      */

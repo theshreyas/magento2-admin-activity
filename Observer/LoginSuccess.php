@@ -13,10 +13,6 @@ namespace Catgento\AdminActivity\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use \Catgento\AdminActivity\Helper\Data as Helper;
 
-/**
- * Class LoginSuccess
- * @package Catgento\AdminActivity\Observer
- */
 class LoginSuccess implements ObserverInterface
 {
     /**
@@ -52,6 +48,7 @@ class LoginSuccess implements ObserverInterface
     
     /**
      * Login success
+     *
      * @param \Magento\Framework\Event\Observer $observer
      * @return void
      */

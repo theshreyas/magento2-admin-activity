@@ -16,10 +16,6 @@ use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\App\Config\Storage\Writer;
 use Catgento\AdminActivity\Helper\Data as ActivityHelper;
 
-/**
- * Class Uninstall
- * @package Catgento\AdminActivity\Setup
- */
 class Uninstall implements UninstallInterface
 {
     /**
@@ -38,6 +34,7 @@ class Uninstall implements UninstallInterface
 
     /**
      * Module uninstall code
+     *
      * @param SchemaSetupInterface $setup
      * @param ModuleContextInterface $context
      * @return void

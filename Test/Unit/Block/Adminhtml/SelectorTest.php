@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Test\Unit\Block\Adminhtml;
 
-/**
- * Class SelectorTest
- * @package Catgento\AdminActivity\Test\Unit\Block\Adminhtml
- */
 class SelectorTest extends \PHPUnit\Framework\TestCase
 {
     public $urlBuiler;

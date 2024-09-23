@@ -12,16 +12,12 @@ namespace Catgento\AdminActivity\Ui\Component\Listing\Column;
 
 use Magento\Ui\Component\Listing\Columns\Column;
 
-/**
- * Class ItemColumn
- * @package Catgento\AdminActivity\Ui\Component\Listing\Column
- */
 class ItemColumn extends Column
 {
     /**
      * @var int
      */
-    const URL_COUNT = 7;
+    public const URL_COUNT = 7;
 
     /**
      * @var array
@@ -36,7 +32,7 @@ class ItemColumn extends Column
     ];
 
     /**
-     * Escaper
+     * Escaper variable
      * @var \Magento\Framework\Escaper
      */
     public $escaper;
@@ -47,7 +43,7 @@ class ItemColumn extends Column
     public $backendUrl;
 
     /**
-     * Filter manager
+     * Filter manager variable
      * @var \Magento\Framework\Filter\FilterManager
      */
     public $filterManager;
@@ -77,6 +73,7 @@ class ItemColumn extends Column
 
     /**
      * Escape HTML entities
+     *
      * @param string|array $data
      * @param array|null $allowedTags
      * @return string
@@ -88,6 +85,7 @@ class ItemColumn extends Column
 
     /**
      * Render block HTML
+     *
      * @return string
      */
     public function _toHtml()
@@ -95,12 +93,14 @@ class ItemColumn extends Column
         $length = 30;
         $itemName = $this->filterManager->truncate(
             $this->getLabel(),
-            ['length' => $length, 'etc' => '...', 'remainder' => '', 'breakWords' => false]);
+            ['length' => $length, 'etc' => '...', 'remainder' => '', 'breakWords' => false]
+        );
         return '<a ' . $this->getLinkAttributes() . ' >' . $this->escapeHtml($itemName) . '</a></li>';
     }
 
     /**
      * Prepare link attributes as serialized and formatted string
+     *
      * @return string
      */
     public function getLinkAttributes()
@@ -122,6 +122,7 @@ class ItemColumn extends Column
 
     /**
      * Serialize attributes
+     *
      * @param   array $attributes
      * @param   string $valueSeparator
      * @param   string $fieldSeparator
@@ -139,7 +140,8 @@ class ItemColumn extends Column
 
     /**
      * Convert action to url
-     * @param $url
+     *
+     * @param string $url
      * @return string
      */
     public function prepareUrl($url)
@@ -164,9 +166,11 @@ class ItemColumn extends Column
 
     /**
      * Initialize parameter for link
+     *
+     * @param array $item
      * @return void
      */
-    public function __initLinkParams($item)
+    public function initLinkParams($item)
     {
         $this->setHref($this->prepareUrl($item['item_url']));
         $this->setTitle($item['item_name']);
@@ -176,6 +180,7 @@ class ItemColumn extends Column
 
     /**
      * Prepare Data Source
+     *
      * @param array $dataSource
      * @return array
      */
@@ -184,7 +189,7 @@ class ItemColumn extends Column
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as & $item) {
                 if (!empty($item['item_url'])) {
-                    $this->__initLinkParams($item);
+                    $this->initLinkParams($item);
                     $item[$this->getData('name')] = $this->_toHtml();
                 }
             }

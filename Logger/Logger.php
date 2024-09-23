@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Logger;
 
-/**
- * Class Logger
- * @package Catgento\AdminActivity\Logger
- */
 class Logger extends \Monolog\Logger
 {
 

@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Test\Unit\Plugin;
 
-/**
- * Class AuthTest
- * @package Catgento\AdminActivity\Test\Unit\Plugin
- */
 class AuthTest extends \PHPUnit\Framework\TestCase
 {
     public $authMock;

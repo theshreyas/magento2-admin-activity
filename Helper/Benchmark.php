@@ -13,10 +13,6 @@ namespace Catgento\AdminActivity\Helper;
 use Catgento\AdminActivity\Helper\Data as Helper;
 use Magento\Framework\App\Helper\AbstractHelper;
 
-/**
- * Class Benchmark
- * @package Catgento\AdminActivity\Helper
- */
 class Benchmark extends AbstractHelper
 {
     /**

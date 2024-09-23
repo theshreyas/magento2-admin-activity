@@ -12,7 +12,7 @@ namespace Catgento\AdminActivity\Api;
 
 /**
  * Interface LoginRepositoryInterface
- * @package Catgento\AdminActivity\Api
+
  */
 interface LoginRepositoryInterface
 {

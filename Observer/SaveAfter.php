@@ -13,21 +13,17 @@ namespace Catgento\AdminActivity\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use \Catgento\AdminActivity\Helper\Data as Helper;
 
-/**
- * Class SaveAfter
- * @package Catgento\AdminActivity\Observer
- */
 class SaveAfter implements ObserverInterface
 {
     /**
      * @var string
      */
-    const ACTION_MASSCANCEL = 'massCancel';
+    public const ACTION_MASSCANCEL = 'massCancel';
 
     /**
      * @var string
      */
-    const SYSTEM_CONFIG = 'adminhtml_system_config_save';
+    public const SYSTEM_CONFIG = 'adminhtml_system_config_save';
 
     /**
      * @var \Catgento\AdminActivity\Model\Processor
@@ -62,6 +58,7 @@ class SaveAfter implements ObserverInterface
 
     /**
      * Save after
+     *
      * @param \Magento\Framework\Event\Observer $observer
      * @return \Magento\Framework\Event\Observer|boolean
      */

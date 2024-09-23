@@ -13,21 +13,17 @@ namespace Catgento\AdminActivity\Model;
 use Catgento\AdminActivity\Api\ActivityRepositoryInterface;
 use \Catgento\AdminActivity\Helper\Data as Helper;
 
-/**
- * Class Processor
- * @package Catgento\AdminActivity\Model
- */
 class Processor
 {
     /**
      * @var string
      */
-    const PRIMARY_FIELD = 'id';
+    public const PRIMARY_FIELD = 'id';
 
     /**
      * @var array
      */
-    const SKIP_MODULE_ACTIONS = [
+    public const SKIP_MODULE_ACTIONS = [
         'mui_index_render',
         'adminactivity_activity_index',
         'adminactivity_activity_log',
@@ -37,24 +33,24 @@ class Processor
     /**
      * @var string
      */
-    const SKIP_MODULE = [
+    public const SKIP_MODULE = [
         'mui'
     ];
 
     /**
      * @var string
      */
-    const SALES_ORDER = 'sales_order';
+    public const SALES_ORDER = 'sales_order';
 
     /**
      * @var string
      */
-    const SAVE_ACTION = 'save';
+    public const SAVE_ACTION = 'save';
 
     /**
      * @var string
      */
-    const EDIT_ACTION = 'edit';
+    public const EDIT_ACTION = 'edit';
 
     /**
      * @var Config
@@ -142,14 +138,15 @@ class Processor
     public $messageManager;
 
     /**
-     * Request
+     * Request variable
      *
      * @var \Magento\Framework\App\RequestInterface
      */
     public $request;
 
     /**
-     * Http request
+     * Http request variable
+     *
      * @var \Magento\Framework\App\Request\Http
      */
     public $httpRequest;
@@ -176,6 +173,7 @@ class Processor
 
     /**
      * Processor constructor.
+     *
      * @param Config $config
      * @param \Magento\Backend\Model\Auth\Session $authSession
      * @param Handler $handler
@@ -188,6 +186,7 @@ class Processor
      * @param Helper $helper
      * @param \Magento\Framework\Message\ManagerInterface $messageManager
      * @param \Magento\Framework\App\RequestInterface $request
+     * @param \Magento\Framework\App\Request\Http $httpRequest
      * @param Activity\Status $status
      * @param Handler\PostDispatch $postDispatch
      */
@@ -227,6 +226,7 @@ class Processor
 
     /**
      * Get and set event config from full action name
+     *
      * @param $fullActionName
      * @param $actionName
      * @return $this
@@ -248,6 +248,7 @@ class Processor
 
     /**
      * Check Model class
+     *
      * @param $model
      * @return bool
      */
@@ -275,6 +276,7 @@ class Processor
 
     /**
      * Return method name of TrackField class
+     *
      * @return string
      */
     public function getMethod()
@@ -284,6 +286,7 @@ class Processor
 
     /**
      * Get item url
+     *
      * @param $model
      * @return string
      */
@@ -309,6 +312,7 @@ class Processor
 
     /**
      * Set activity data after item added
+     *
      * @param $model
      * @return $this|bool
      */
@@ -317,7 +321,7 @@ class Processor
         if ($this->validate($model)) {
             $logData = $this->handler->modelAdd($model, $this->getMethod());
             if (!empty($logData)) {
-                $activity = $this->_initActivity($model);
+                $activity = $this->initActivity($model);
                 $activity->setIsRevertable(0);
 
                 $this->addLog($activity, $logData, $model);
@@ -328,6 +332,7 @@ class Processor
 
     /**
      * Set activity data after item edited
+     *
      * @param $model
      * @return $this|bool
      */
@@ -337,7 +342,7 @@ class Processor
         if ($this->validate($model)) {
             $logData = $this->handler->modelEdit($model, $this->getMethod());
             if (!empty($logData)) {
-                $activity = $this->_initActivity($model);
+                $activity = $this->initActivity($model);
                 $activity->setActionType($label);
                 $activity->setIsRevertable(1);
 
@@ -350,6 +355,7 @@ class Processor
 
     /**
      * Set activity data after item deleted
+     *
      * @param $model
      * @return $this|bool
      */
@@ -358,7 +364,7 @@ class Processor
         if ($this->validate($model)) {
             $logData = $this->handler->modelDelete($model, $this->getMethod());
             if (!empty($logData)) {
-                $activity = $this->_initActivity($model);
+                $activity = $this->initActivity($model);
 
                 $activity->setIsRevertable(0);
                 $activity->setItemUrl('');
@@ -371,6 +377,7 @@ class Processor
 
     /**
      * Set activity details data
+     *
      * @param $activity
      * @param $logData
      * @param $model
@@ -378,7 +385,7 @@ class Processor
      */
     public function addLog($activity, $logData, $model)
     {
-        $logDetail = $this->_initActivityDetail($model);
+        $logDetail = $this->initActivityDetail($model);
         $this->activityLogs[] = [
             \Catgento\AdminActivity\Model\Activity::class => $activity,
             \Catgento\AdminActivity\Model\ActivityLog::class => $logData,
@@ -388,6 +395,7 @@ class Processor
 
     /**
      * Insert activity log data in database
+     *
      * @return bool
      */
     public function saveLogs()
@@ -425,9 +433,10 @@ class Processor
 
     /**
      * Set activity details data
+     *
      * @return Activity
      */
-    public function _initLog()
+    public function initLog()
     {
         $activity = $this->activityFactory->create();
 
@@ -441,7 +450,7 @@ class Processor
         $activity->setRemoteIp($this->remoteAddress->getRemoteAddress());
         $activity->setForwardedIp($this->httpRequest->getServer('HTTP_X_FORWARDED_FOR'));
         $activity->setUserAgent($this->handler->header->getHttpUserAgent());
-        if($this->eventConfig != null) {
+        if ($this->eventConfig != null) {
             $activity->setModule($this->helper->getActivityModuleName($this->eventConfig['module']));
             $activity->setActionType($this->eventConfig['action']);
         }
@@ -453,16 +462,17 @@ class Processor
 
     /**
      * Set activity scope, name and item url
+     *
      * @param $model
      * @return bool|Activity
      */
-    public function _initActivity($model)
+    public function initActivity($model)
     {
         if (!$this->authSession->isLoggedIn()) {
             return false;
         }
 
-        $activity = $this->_initLog();
+        $activity = $this->initLog();
 
         $activity->setStoreId($this->getStoreId($model));
         $activity->setItemName($model->getData($this->config
@@ -474,10 +484,11 @@ class Processor
 
     /**
      * Set activity details
+     *
      * @param $model
      * @return mixed
      */
-    public function _initActivityDetail($model)
+    public function initActivityDetail($model)
     {
         $activity = $this->activityDetailFactory->create()->setData([
             'model_class' => get_class($model),
@@ -490,6 +501,7 @@ class Processor
 
     /**
      * Check post dispatch method to track log for mass actions
+     *
      * @return bool
      */
     public function _callPostDispatchCallback()
@@ -508,6 +520,7 @@ class Processor
 
     /**
      * Get store identifier
+     *
      * @param $model
      * @return int
      */
@@ -525,6 +538,7 @@ class Processor
 
     /**
      * Get scope name
+     *
      * @return string
      */
     public function getScope()
@@ -541,6 +555,7 @@ class Processor
 
     /**
      * Revert last changes made in module
+     *
      * @param $activityId
      * @return array
      */
@@ -576,6 +591,7 @@ class Processor
 
     /**
      * Convert module and action name to user readable format
+     *
      * @param $name
      * @param string $delimiter
      * @return string
@@ -598,6 +614,7 @@ class Processor
 
     /**
      * Check action to skip
+     *
      * @param $module
      * @param $fullAction
      * @return bool
@@ -613,6 +630,7 @@ class Processor
 
     /**
      * Track page visit history
+     *
      * @param $module
      * @return void
      */
@@ -625,7 +643,7 @@ class Processor
         if ($this->helper->isPageVisitEnable()
             && $this->isValidAction($module, $this->lastAction) && $this->eventConfig) {
 
-            $activity = $this->_initLog();
+            $activity = $this->initLog();
 
             $activity->setActionType('view');
             $activity->setIsRevertable(0);

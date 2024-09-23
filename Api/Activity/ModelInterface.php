@@ -12,12 +12,12 @@ namespace Catgento\AdminActivity\Api\Activity;
 
 /**
  * Interface ModelInterface
- * @package Catgento\AdminActivity\Api\Activity
  */
 interface ModelInterface
 {
     /**
      * Get old data
+     *
      * @param $model
      * @return mixed
      */
@@ -25,6 +25,7 @@ interface ModelInterface
 
     /**
      * Get edit data
+     *
      * @param $model
      * @return mixed
      */

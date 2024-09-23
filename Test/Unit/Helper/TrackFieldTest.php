@@ -10,10 +10,6 @@
  */
 namespace Catgento\AdminActivity\Test\Unit\Helper;
 
-/**
- * Class TrackFieldTest
- * @package Catgento\AdminActivity\Test\Unit\Helper
- */
 class TrackFieldTest extends \PHPUnit\Framework\TestCase
 {
     public $helper;

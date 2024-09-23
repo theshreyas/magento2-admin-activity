@@ -15,10 +15,6 @@ use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 
-/**
- * Class ViewAction
- * @package Catgento\AdminActivity\Ui\Component\Listing\Column
- */
 class ViewAction extends Column
 {
     /**
@@ -55,6 +51,7 @@ class ViewAction extends Column
 
     /**
      * Get item url
+     *
      * @return string
      */
     public function getViewUrl()
@@ -66,6 +63,7 @@ class ViewAction extends Column
     
     /**
      * Prepare Data Source
+     *
      * @param array $dataSource
      * @return array
      */

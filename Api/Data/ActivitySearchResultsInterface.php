@@ -12,12 +12,12 @@ namespace Catgento\AdminActivity\Api\Data;
 
 /**
  * Interface LogSearchResultsInterface
- * @package Catgento\EnhancedSMTP\Api\Data
  */
 interface ActivitySearchResultsInterface extends \Magento\Framework\Api\SearchResultsInterface
 {
     /**
      * Get admin activity list.
+     *
      * @api
      * @return \Catgento\AdminActivity\Model\Activity[]
      */
@@ -25,6 +25,7 @@ interface ActivitySearchResultsInterface extends \Magento\Framework\Api\SearchRe
 
     /**
      * Set admin activity list.
+     *
      * @api
      * @param \Catgento\AdminActivity\Model\Activity[] $items
      * @return $this

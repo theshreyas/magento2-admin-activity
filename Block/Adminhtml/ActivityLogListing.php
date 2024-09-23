@@ -15,10 +15,6 @@ use Magento\Backend\Block\Template;
 use Catgento\AdminActivity\Api\ActivityRepositoryInterface;
 use Catgento\AdminActivity\Helper\Browser;
 
-/**
- * Class ActivityLogListing
- * @package Catgento\AdminActivity\Block\Adminhtml
- */
 class ActivityLogListing extends Template
 {
     /**
@@ -47,8 +43,7 @@ class ActivityLogListing extends Template
         \Magento\Backend\Block\Template\Context $context,
         ActivityRepositoryInterface $activityRepository,
         Browser $browser
-    )
-    {
+    ) {
         $this->activityRepository = $activityRepository;
         $this->browser = $browser;
         parent::__construct($context);
@@ -102,7 +97,7 @@ class ActivityLogListing extends Template
     {
         if ($oldValue === '' && $newValue !== null) {
             return 1;
-        } else if ($oldValue !== null && $newValue === '') {
+        } elseif ($oldValue !== null && $newValue === '') {
             return 2;
         } else {
             return 0;

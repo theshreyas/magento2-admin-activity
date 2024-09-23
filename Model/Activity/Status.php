@@ -12,31 +12,27 @@ namespace Catgento\AdminActivity\Model\Activity;
 
 use \Magento\Framework\Model\AbstractModel;
 
-/**
- * Class Status
- * @package Catgento\AdminActivity\Model\Activity
- */
 class Status extends AbstractModel
 {
     /**
      * @var Int
      */
-    const ACTIVITY_NONE = 0;
+    public const ACTIVITY_NONE = 0;
 
     /**
      * @var Int
      */
-    const ACTIVITY_REVERTABLE = 1;
+    public const ACTIVITY_REVERTABLE = 1;
 
     /**
      * @var Int
      */
-    const ACTIVITY_REVERT_SUCCESS = 2;
+    public const ACTIVITY_REVERT_SUCCESS = 2;
 
     /**
      * @var Int
      */
-    const ACTIVITY_FAIL = 3;
+    public const ACTIVITY_FAIL = 3;
 
     /**
      * @var \Catgento\AdminActivity\Model\ActivityFactory

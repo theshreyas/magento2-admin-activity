@@ -14,16 +14,12 @@ use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Backend\App\Action;
 
-/**
- * Class Index
- * @package Catgento\AdminActivity\Controller\Adminhtml\Activity
- */
 class Index extends Action
 {
     /**
      * @var string
      */
-    const ADMIN_RESOURCE = 'Catgento_AdminActivity::activity';
+    public const ADMIN_RESOURCE = 'Catgento_AdminActivity::activity';
 
     /**
      * @var PageFactory
@@ -45,6 +41,7 @@ class Index extends Action
 
     /**
      * Index action
+     *
      * @return \Magento\Backend\Model\View\Result\Page
      */
     public function execute()
